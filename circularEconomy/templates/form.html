@@ -1,138 +1,286 @@
 {% extends "base.html" %}
 {% block title %}Form page{% endblock%}
 {% block content %}
-	<p>Please fill the following so we can rate your automobile industry</p>
-	<div >
-	<form>
-	<div class="form-group">
-		<label>Number of vehicles Remanufactured this year:</label>
-		<textarea class="form-control" id="mRemanufactured" rows="1"></textarea>
+	<p><strong>Please fill the following so we can rate your automobile industry</strong></p>
+	<div id = "pickYears">
+		<p style="text-align:center;">Select the Years</p>
+		<div id= "yearLine" style="text-align:center;">
+			<input type="text" id = "year1" class ="datepicker">
+			<input type="text" id = "year2 "class ="datepicker">
+			<input type="text" id = "year3" class ="datepicker">
+		</div>
 	</div>
-	<div class="form-group">
-		<label>Number of vehicles Produced this year:</label>
-		<textarea class="form-control" id="mTotal" rows="1"></textarea>
+	<div id="first2">
+		<div id="first">
+			<p class= "p1"><strong>Production and Consumption</strong></p>
+			<div class= "wholeQuestions">
+				<div class = "questions">
+					<div class= "question">
+					<p>first?</p>
+					</div>
+					<div title = "whaaaaat" class= "icon">
+						<i class="fas fa-info-circle"></i>
+					</div>
+
+				</div>
+				<div class = "questions">
+					
+				</div>
+				<div class = "inputs">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+				</div>	
+			</div>
+			<div class= "wholeQuestion">
+				<div class = "questions">
+					<div class= "question">
+					<p>second?</p>
+					</div>
+					<div title = "whaaaaat" class= "icon">
+						<i class="fas fa-info-circle"></i>
+					</div>
+				</div>
+				<div class = "inputs">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+				</div>	
+			</div>
+			<div class= "wholeQuestion">
+				<div class = "questions">
+					<div class= "question">
+					<p>third?</p>
+					</div>
+					<div title = "whaaaaat" class= "icon">
+						<i class="fas fa-info-circle"></i>
+					</div>
+				</div>
+				<div class = "inputs">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+				</div>	
+			</div>
+			<div class= "wholeQuestion">
+				<div class = "questions">
+					<div class= "question">
+					<p>forth?</p>
+					</div>
+					<div title = "whaaaaat" class= "icon">
+						<i class="fas fa-info-circle"></i>
+					</div>
+				</div>
+				<div class = "inputs">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+				</div>	
+			</div>
+		</div>
+		<div id= "second">
+			<p class= "p1"><strong>Waste Management</strong></p>
+			<div class= "wholeQuestions">
+				<div class = "questions">
+					<div class= "question">
+					<p>first?</p>
+					</div>
+					<div title = "whaaaaat" class= "icon">
+						<i class="fas fa-info-circle"></i>
+					</div>
+
+				</div>
+				<div class = "questions">
+					
+				</div>
+				<div class = "inputs">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+				</div>	
+			</div>
+			<div class= "wholeQuestion">
+				<div class = "questions">
+					<div class= "question">
+					<p>second?</p>
+					</div>
+					<div title = "whaaaaat" class= "icon">
+						<i class="fas fa-info-circle"></i>
+					</div>
+				</div>
+				<div class = "inputs">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+				</div>	
+			</div>
+			<div class= "wholeQuestion">
+				<div class = "questions">
+					<div class= "question">
+					<p>third?</p>
+					</div>
+					<div title = "whaaaaat" class= "icon">
+						<i class="fas fa-info-circle"></i>
+					</div>
+				</div>
+				<div class = "inputs">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+				</div>	
+			</div>
+			<div class= "wholeQuestion">
+				<div class = "questions">
+					<div class= "question">
+					<p>forth?</p>
+					</div>
+					<div title = "whaaaaat" class= "icon">
+						<i class="fas fa-info-circle"></i>
+					</div>
+				</div>
+				<div class = "inputs">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+				</div>	
+			</div>
+		</div>
 	</div>
-	<div class="form-group">
-		<label>Mass of Reused Material used in Production:</label>
-		<textarea class="form-control" id="mReused" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Total mass of Material used in production: </label>
-		<textarea class="form-control" id="pMass" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Mass of material used in Production and can be recycled: </label>
-		<textarea class="form-control" id="mRecycle" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Co2 emissions of last year: </label>
-		<textarea class="form-control" id="co2" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Mass of Production's waste:</label>
-		<textarea class="form-control" id="mWaste" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Demand of raw material this year:</label>
-		<textarea class="form-control" id="rawMaterialThis" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Demand of raw material last year:</label>
-		<textarea class="form-control" id="rawMaterialLast" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Number of parts with installed IOT technologies (for check control):</label>
-		<textarea class="form-control" id="partsIOT" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Total number of parts used:</label>
-		<textarea class="form-control" id="partsTotal" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Number of vehicles checked for Repair this Year: </label>
-		<textarea class="form-control" id="vRepairedThis" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Number of vehicles checked for Repair last Year: </label>
-		<textarea class="form-control" id="vRepairedLast" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Mass of material than can be reused after EOL of vehicles: </label>
-		<textarea class="form-control" id="mReusedEOL" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Mass of material than can be recycled after EOL of vehicles: </label>
-		<textarea class="form-control" id="mRecycledEOL" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Total mass of those EOL vehicles: </label>
-		<textarea class="form-control" id="mTotalEOL" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Number of vehicles which will be remanufactured: </label>
-		<textarea class="form-control" id="vRemanufactured" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Total number of EOL vehicles: </label>
-		<textarea class="form-control" id="vTotalEOL" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Number of recovery centers this Year: </label>
-		<textarea class="form-control" id="recoveryThis" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Number of recovery centers last Year: </label>
-		<textarea class="form-control" id="recoveryLast" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Cost of sutisfying demand without reused material: </label>
-		<textarea class="form-control" id="cWithout" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Cost of sutisfying demand with reused material also: </label>
-		<textarea class="form-control" id="cWith" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Mass of reused material used: </label>
-		<textarea class="form-control" id="usedReused" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Number of reused parts from EOL vehicles: </label>
-		<textarea class="form-control" id="nReusedEOL" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Total number of parts used by the industry: </label>
-		<textarea class="form-control" id="nTotal" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Demand of raw material this year</label>
-		<textarea class="form-control" id="demandThis" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Demand of raw material last year</label>
-		<textarea class="form-control" id="demandLast" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Number of jobs in industry with the Linear Model: </label>
-		<textarea class="form-control" id="linearJobs" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Number of jobs in Industry using Circular technics: </label>
-		<textarea class="form-control" id="circularJobs" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Number of Circular projects this Year: </label>
-		<textarea class="form-control" id="projectsThis" rows="1"></textarea>
-	</div>
-	<div class="form-group">
-		<label>Number of Circular projects last Year: </label>
-		<textarea class="form-control" id="projectsLast" rows="1"></textarea>
+	<div id="second2">
+		<div id="third">
+			<p class= "p1"><strong>Secondary Materials</strong></p>
+			<div class= "wholeQuestions">
+				<div class = "questions">
+					<div class= "question">
+					<p>first?</p>
+					</div>
+					<div title = "whaaaaat" class= "icon">
+						<i class="fas fa-info-circle"></i>
+					</div>
+
+				</div>
+				<div class = "questions">
+					
+				</div>
+				<div class = "inputs">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+				</div>	
+			</div>
+			<div class= "wholeQuestion">
+				<div class = "questions">
+					<div class= "question">
+					<p>second?</p>
+					</div>
+					<div title = "whaaaaat" class= "icon">
+						<i class="fas fa-info-circle"></i>
+					</div>
+				</div>
+				<div class = "inputs">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+				</div>	
+			</div>
+			<div class= "wholeQuestion">
+				<div class = "questions">
+					<div class= "question">
+					<p>third?</p>
+					</div>
+					<div title = "whaaaaat" class= "icon">
+						<i class="fas fa-info-circle"></i>
+					</div>
+				</div>
+				<div class = "inputs">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+				</div>	
+			</div>
+			<div class= "wholeQuestion">
+				<div class = "questions">
+					<div class= "question">
+					<p>forth?</p>
+					</div>
+					<div title = "whaaaaat" class= "icon">
+						<i class="fas fa-info-circle"></i>
+					</div>
+				</div>
+				<div class = "inputs">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+				</div>	
+			</div>
+		</div>
+		<div id= "forth">
+			<p class= "p1"><strong>Competitiveness and Innovation</strong></p>
+			<div class= "wholeQuestions">
+				<div class = "questions">
+					<div class= "question">
+					<p>first?</p>
+					</div>
+					<div title = "whaaaaat" class= "icon">
+						<i class="fas fa-info-circle"></i>
+					</div>
+
+				</div>
+				<div class = "questions">
+					
+				</div>
+				<div class = "inputs">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+				</div>	
+			</div>
+			<div class= "wholeQuestion">
+				<div class = "questions">
+					<div class= "question">
+					<p>second?</p>
+					</div>
+					<div title = "whaaaaat" class= "icon">
+						<i class="fas fa-info-circle"></i>
+					</div>
+				</div>
+				<div class = "inputs">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+				</div>	
+			</div>
+			<div class= "wholeQuestion">
+				<div class = "questions">
+					<div class= "question">
+					<p>third?</p>
+					</div>
+					<div title = "whaaaaat" class= "icon">
+						<i class="fas fa-info-circle"></i>
+					</div>
+				</div>
+				<div class = "inputs">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+				</div>	
+			</div>
+			<div class= "wholeQuestion">
+				<div class = "questions">
+					<div class= "question">
+					<p>forth?</p>
+					</div>
+					<div title = "whaaaaat" class= "icon">
+						<i class="fas fa-info-circle"></i>
+					</div>
+				</div>
+				<div class = "inputs">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+					<input type="number" class = "input">
+				</div>	
+			</div>
+		</div>
 	</div>
 	
-	
-	<button type="submit" class="btn btn-primary">Submit</button>
-	
-	
-	</form>
-	</div>
 {% endblock%}
