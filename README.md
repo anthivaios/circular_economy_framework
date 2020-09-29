@@ -11,3 +11,10 @@ Theses : Circular Economy Framework
  ### run project
  python test.py
  
+ ### guides for pyCharm
+  automatic imports: 
+  alt+ enter
+  
+  formatted lines:
+  ctrl+alt+l
+ 
