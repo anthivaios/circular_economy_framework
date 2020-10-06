@@ -1,286 +1,359 @@
 {% extends "base.html" %}
 {% block title %}Form page{% endblock%}
 {% block content %}
-	<p><strong>Please fill the following so we can rate your automobile industry</strong></p>
-	<div id = "pickYears">
-		<p style="text-align:center;">Select the Years</p>
-		<div id= "yearLine" style="text-align:center;">
-			<input type="text" id = "year1" class ="datepicker">
-			<input type="text" id = "year2 "class ="datepicker">
-			<input type="text" id = "year3" class ="datepicker">
-		</div>
-	</div>
-	<div id="first2">
-		<div id="first">
-			<p class= "p1"><strong>Production and Consumption</strong></p>
-			<div class= "wholeQuestions">
-				<div class = "questions">
-					<div class= "question">
-					<p>first?</p>
-					</div>
-					<div title = "whaaaaat" class= "icon">
-						<i class="fas fa-info-circle"></i>
-					</div>
+<form action="" method="post">
+    <p><strong>Please fill the following so we can rate your automobile industry</strong></p>
+    <div id="pickYears">
+        <p style="text-align:center;">Select the Years</p>
+        <div id="yearLine" style="text-align:center;">
+            <input type="text" name="year1" class="datepicker" required>
+            <input type="text" name="year2" class="datepicker" required>
+            <input type="text" name="year3" class="datepicker" required>
+        </div>
+    </div>
+    <div id="first2">
+        <div id="first">
+            <p class="p1"><strong>Production and Consumption</strong></p>
+            <div class="wholeQuestion">
+                <div class="questions">
+                    <div class="question">
+                        <p>Ratio of Recycled Materials in Average Vehicle Production(%).</p>
+                    </div>
+                    <div title="Materials with recycling potential have unique role on the road for a more Circular automotive industry!"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
 
-				</div>
-				<div class = "questions">
-					
-				</div>
-				<div class = "inputs">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-				</div>	
-			</div>
-			<div class= "wholeQuestion">
-				<div class = "questions">
-					<div class= "question">
-					<p>second?</p>
-					</div>
-					<div title = "whaaaaat" class= "icon">
-						<i class="fas fa-info-circle"></i>
-					</div>
-				</div>
-				<div class = "inputs">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-				</div>	
-			</div>
-			<div class= "wholeQuestion">
-				<div class = "questions">
-					<div class= "question">
-					<p>third?</p>
-					</div>
-					<div title = "whaaaaat" class= "icon">
-						<i class="fas fa-info-circle"></i>
-					</div>
-				</div>
-				<div class = "inputs">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-				</div>	
-			</div>
-			<div class= "wholeQuestion">
-				<div class = "questions">
-					<div class= "question">
-					<p>forth?</p>
-					</div>
-					<div title = "whaaaaat" class= "icon">
-						<i class="fas fa-info-circle"></i>
-					</div>
-				</div>
-				<div class = "inputs">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-				</div>	
-			</div>
-		</div>
-		<div id= "second">
-			<p class= "p1"><strong>Waste Management</strong></p>
-			<div class= "wholeQuestions">
-				<div class = "questions">
-					<div class= "question">
-					<p>first?</p>
-					</div>
-					<div title = "whaaaaat" class= "icon">
-						<i class="fas fa-info-circle"></i>
-					</div>
+                </div>
+                <div class="inputs">
+                    <input type="number" step="0.01" name="rec1" min="0" max="100" class="input" required>
+                    <input type="number" step="0.01" name="rec2" min="0" max="100" class="input" required>
+                    <input type="number" step="0.01" name="rec3" min="0" max="100" class="input" required>
+                </div>
+            </div>
+            <div class="wholeQuestion">
+                <div class="questions">
+                    <div class="question">
+                        <p>Time of Disassemby on an Average Vehicle(hours).</p>
+                    </div>
+                    <div title="Small Disassemby time is essential for the circular operations (Recycle, Remanufacture, etc)!"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="inputs">
+                    <input type="number" step="0.01" name="disassembly1" min="0" max="50" class="input" required>
+                    <input type="number" step="0.01" name="disassembly2" min="0" max="50" class="input" required>
+                    <input type="number" step="0.01" name="disassembly3" min="0" max="50" class="input" required>
+                </div>
+            </div>
+            <div class="wholeQuestion">
+                <div class="questions">
+                    <div class="question">
+                        <p>Energy Consumption for the Production of an Average Vehicle(MWh).</p>
+                    </div>
+                    <div title="One of the main goals towards Circularity is the reduction of the Energy used in Production!"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="inputs">
+                    <input type="number" step="0.01" name="energy1" min="0" max="6" class="input" required>
+                    <input type="number" step="0.01" name="energy2" min="0" max="6" class="input" required>
+                    <input type="number" step="0.01" name="energy3" min="0" max="6" class="input" required>
+                </div>
+            </div>
+            <div class="wholeQuestion">
+                <div class="questions">
+                    <div class="question">
+                        <p>Co2 emissions for the Production of an Average Vehicle(tonnes).</p>
+                    </div>
+                    <div title="Co^2 emissions have great economic and environmental impacts. Their reduction is one more step towards Circularity!"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="inputs">
+                    <input type="number" step="0.01" name="co2-1" min="0" max="4" class="input" required>
+                    <input type="number" step="0.01" name="co2-2" min="0" max="4" class="input" required>
+                    <input type="number" step="0.01" name="co2-3" min="0" max="4" class="input" required>
+                </div>
+            </div>
+            <div class="wholeQuestion">
+                <div class="questions">
+                    <div class="question">
+                        <p>Material loss in the Production of an Average Vehicle(tonnes).</p>
+                    </div>
+                    <div title="Material Loss in the Production proccess is a fine Indicator of Circularity. These materials are hard to be reused, so their quantity rate must be decreased!"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="inputs">
+                    <input type="number" step="0.01" name="loss1" min="0" max="10" class="input" required>
+                    <input type="number" step="0.01" name="loss2" min="0" max="10" class="input" required>
+                    <input type="number" step="0.01" name="loss3" min="0" max="10" class="input" required>
+                </div>
+            </div>
+            <div class="wholeQuestion">
+                <div class="questions">
+                    <div class="question">
+                        <p>Water used in the Production of an Average Vehicle(liter).</p>
+                    </div>
+                    <div title="The Production of a vehicle required a signifficant amount of Water, the reduction of which is a good parameter of Circularity's growth!"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="inputs">
+                    <input type="number" step="0.01" name="water1" min="0" max="200" class="input" required>
+                    <input type="number" step="0.01" name="water2" min="0" max="200" class="input" required>
+                    <input type="number" step="0.01" name="water3" min="0" max="200" class="input" required>
+                </div>
+            </div>
+            <div class="wholeQuestion">
+                <div class="questions">
+                    <div class="question">
+                        <p>Number of parts with Remote Information Technologies on Average Vehicle(parts)</p>
+                    </div>
+                    <div class="pen"
+                         title="IOT Technologies are game-changing in the way that we can observe what goes wrong in a Vehicle so we can make them better and increase their lifetime!"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="inputs">
+                    <input type="number" step="1" name="parts1" min="0" max="500" class="input" required>
+                    <input type="number" step="1" name="parts2" min="0" max="500" class="input" required>
+                    <input type="number" step="1" name="parts3" min="0" max="500" class="input" required>
+                </div>
+            </div>
+            <div class="wholeQuestion">
+                <div class="questions">
+                    <div class="question">
+                        <p>Ratio of Vehicle Checks(%).</p>
+                    </div>
+                    <div title="The usual check of vehicles is really important, because they achieve minor fixes and prevent serious damage, increasing lifetime of vehicle!"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="inputs">
+                    <input type="number" step="0.01" name="check1" min="0" max="100" class="input" required>
+                    <input type="number" step="0.01" name="check2" min="0" max="100" class="input" required>
+                    <input type="number" step="0.01" name="check3" min="0" max="100" class="input" required>
+                </div>
+            </div>
+        </div>
+        <div id="second">
+            <div id="sec">
+                <p class="p1"><strong>Waste Management</strong></p>
+                <div class="wholeQuestions">
+                    <div class="questions">
+                        <div class="question">
+                            <p>Mass Ratio of EOL vehicle waste which will be reused(%).</p>
+                        </div>
+                        <div title="Some parts of the vehicle at the end of its life are in fine condition and can be reused with or without modifications feeding a material loop!"
+                             class="icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
 
-				</div>
-				<div class = "questions">
-					
-				</div>
-				<div class = "inputs">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-				</div>	
-			</div>
-			<div class= "wholeQuestion">
-				<div class = "questions">
-					<div class= "question">
-					<p>second?</p>
-					</div>
-					<div title = "whaaaaat" class= "icon">
-						<i class="fas fa-info-circle"></i>
-					</div>
-				</div>
-				<div class = "inputs">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-				</div>	
-			</div>
-			<div class= "wholeQuestion">
-				<div class = "questions">
-					<div class= "question">
-					<p>third?</p>
-					</div>
-					<div title = "whaaaaat" class= "icon">
-						<i class="fas fa-info-circle"></i>
-					</div>
-				</div>
-				<div class = "inputs">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-				</div>	
-			</div>
-			<div class= "wholeQuestion">
-				<div class = "questions">
-					<div class= "question">
-					<p>forth?</p>
-					</div>
-					<div title = "whaaaaat" class= "icon">
-						<i class="fas fa-info-circle"></i>
-					</div>
-				</div>
-				<div class = "inputs">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-				</div>	
-			</div>
-		</div>
-	</div>
-	<div id="second2">
-		<div id="third">
-			<p class= "p1"><strong>Secondary Materials</strong></p>
-			<div class= "wholeQuestions">
-				<div class = "questions">
-					<div class= "question">
-					<p>first?</p>
-					</div>
-					<div title = "whaaaaat" class= "icon">
-						<i class="fas fa-info-circle"></i>
-					</div>
+                    </div>
+                    <div class="questions">
 
-				</div>
-				<div class = "questions">
-					
-				</div>
-				<div class = "inputs">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-				</div>	
-			</div>
-			<div class= "wholeQuestion">
-				<div class = "questions">
-					<div class= "question">
-					<p>second?</p>
-					</div>
-					<div title = "whaaaaat" class= "icon">
-						<i class="fas fa-info-circle"></i>
-					</div>
-				</div>
-				<div class = "inputs">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-				</div>	
-			</div>
-			<div class= "wholeQuestion">
-				<div class = "questions">
-					<div class= "question">
-					<p>third?</p>
-					</div>
-					<div title = "whaaaaat" class= "icon">
-						<i class="fas fa-info-circle"></i>
-					</div>
-				</div>
-				<div class = "inputs">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-				</div>	
-			</div>
-			<div class= "wholeQuestion">
-				<div class = "questions">
-					<div class= "question">
-					<p>forth?</p>
-					</div>
-					<div title = "whaaaaat" class= "icon">
-						<i class="fas fa-info-circle"></i>
-					</div>
-				</div>
-				<div class = "inputs">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-				</div>	
-			</div>
-		</div>
-		<div id= "forth">
-			<p class= "p1"><strong>Competitiveness and Innovation</strong></p>
-			<div class= "wholeQuestions">
-				<div class = "questions">
-					<div class= "question">
-					<p>first?</p>
-					</div>
-					<div title = "whaaaaat" class= "icon">
-						<i class="fas fa-info-circle"></i>
-					</div>
+                    </div>
+                    <div class="inputs">
+                        <input type="number" step="0.01" name="reused1" min="0" max="100" class="input" required>
+                        <input type="number" step="0.01" name="reused2" min="0" max="100" class="input" required>
+                        <input type="number" step="0.01" name="reused3" min="0" max="100" class="input" required>
+                    </div>
+                </div>
+                <div class="wholeQuestion">
+                    <div class="questions">
+                        <div class="question">
+                            <p>Ratio of EOL Vehicles which will be remanufactured(%).</p>
+                        </div>
+                        <div title="Some vehicles at the end of their life are in good condition and can be remanufactured so that they can be used again!"
+                             class="icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                    </div>
+                    <div class="inputs">
+                        <input type="number" step="0.01" name="remanufactured1" min="0" max="100" class="input"
+                               required>
+                        <input type="number" step="0.01" name="remanufactured2" min="0" max="100" class="input"
+                               required>
+                        <input type="number" step="0.01" name="remanufactured3" min="0" max="100" class="input"
+                               required>
+                    </div>
+                </div>
+                <div class="wholeQuestion">
+                    <div class="questions">
+                        <div class="question">
+                            <p>Mass Ratio of EOL Vehicles which will be recycled(%).</p>
+                        </div>
+                        <div title="End of life vehicles are often a huge source of recycled materials, which contributes in the production loop!"
+                             class="icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                    </div>
+                    <div class="inputs">
+                        <input type="number" step="0.01" name="recycling1" min="0" max="100" class="input" required>
+                        <input type="number" step="0.01" name="recycling2" min="0" max="100" class="input" required>
+                        <input type="number" step="0.01" name="recycling3" min="0" max="100" class="input" required>
+                    </div>
+                </div>
+                <div class="wholeQuestion">
+                    <div class="questions">
+                        <div class="question">
+                            <p>Ratio of EOL Vehicles retrieved properly(%).</p>
+                        </div>
+                        <div title="Retrieving properly vehicles at the end of their live is essential for the circular proccesses, as material loop inputs!"
+                             class="icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                    </div>
+                    <div class="inputs">
+                        <input type="number" step="0.01" name="eol1" min="0" max="100" class="input" required>
+                        <input type="number" step="0.01" name="eol2" min="0" max="100" class="input" required>
+                        <input type="number" step="0.01" name="eol3" min="0" max="100" class="input" required>
+                    </div>
+                </div>
+            </div>
+            <div id="third">
+                <p class="p1"><strong>Secondary Materials</strong></p>
+                <div class="wholeQuestions">
+                    <div class="questions">
+                        <div class="question">
+                            <p>Average Ratio of non Virgin Material of an Average Vehicle(%)</p>
+                        </div>
+                        <div title="The percentage of the non virgin material in a vehicle is a fine indicator which can monitor the increase of the secondary material demand!"
+                             class="icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
 
-				</div>
-				<div class = "questions">
-					
-				</div>
-				<div class = "inputs">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-				</div>	
-			</div>
-			<div class= "wholeQuestion">
-				<div class = "questions">
-					<div class= "question">
-					<p>second?</p>
-					</div>
-					<div title = "whaaaaat" class= "icon">
-						<i class="fas fa-info-circle"></i>
-					</div>
-				</div>
-				<div class = "inputs">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-				</div>	
-			</div>
-			<div class= "wholeQuestion">
-				<div class = "questions">
-					<div class= "question">
-					<p>third?</p>
-					</div>
-					<div title = "whaaaaat" class= "icon">
-						<i class="fas fa-info-circle"></i>
-					</div>
-				</div>
-				<div class = "inputs">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-				</div>	
-			</div>
-			<div class= "wholeQuestion">
-				<div class = "questions">
-					<div class= "question">
-					<p>forth?</p>
-					</div>
-					<div title = "whaaaaat" class= "icon">
-						<i class="fas fa-info-circle"></i>
-					</div>
-				</div>
-				<div class = "inputs">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-					<input type="number" class = "input">
-				</div>	
-			</div>
-		</div>
-	</div>
-	
+                    </div>
+                    <div class="questions">
+
+                    </div>
+                    <div class="inputs">
+                        <input type="number" step="0.01" name="sec1" min="0" max="100" class="input" required>
+                        <input type="number" step="0.01" name="sec2" min="0" max="100" class="input" required>
+                        <input type="number" step="0.01" name="sec3" min="0" max="100" class="input" required>
+                    </div>
+                </div>
+                <div class="wholeQuestion">
+                    <div class="questions">
+                        <div class="question">
+                            <p>Mass Ratio of EOL Vehicles that feeds further Industries(%)</p>
+                        </div>
+                        <div title="The material loops are more efficient out of the borders of one Industry. Taking account of the secondary material supply to other industries gives us one more indicator towards circularity!"
+                             class="icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                    </div>
+                    <div class="inputs">
+                        <input type="number" step="0.01" name="feed1" min="0" max="100" class="input" required>
+                        <input type="number" step="0.01" name="feed2" min="0" max="100" class="input" required>
+                        <input type="number" step="0.01" name="feed3" min="0" max="100" class="input" required>
+                    </div>
+                </div>
+                <!--
+                            <div class= "wholeQuestion">
+                                <div class = "questions">
+                                    <div class= "question">
+                                    <p>third?</p>
+                                    </div>
+                                    <div title = "whaaaaat" class= "icon">
+                                        <i class="fas fa-info-circle"></i>
+                                    </div>
+                                </div>
+                                <div class = "inputs">
+                                    <input type="number" class = "input">
+                                    <input type="number" class = "input">
+                                    <input type="number" class = "input">
+                                </div>
+                            </div>
+                            <div class= "wholeQuestion">
+                                <div class = "questions">
+                                    <div class= "question">
+                                    <p>forth?</p>
+                                    </div>
+                                    <div title = "whaaaaat" class= "icon">
+                                        <i class="fas fa-info-circle"></i>
+                                    </div>
+                                </div>
+                                <div class = "inputs">
+                                    <input type="number" class = "input">
+                                    <input type="number" class = "input">
+                                    <input type="number" class = "input">
+                                </div>
+                            </div>
+                -->
+            </div>
+        </div>
+    </div>
+    <div id="second2">
+
+        <div id="forth">
+            <p class="p1"><strong>Competiveness and Innovation</strong></p>
+            <div class="wholeQuestions">
+                <div class="questions">
+                    <div class="question">
+                        <p>Number Employees working on Jobs which include any Circular Process(employees)</p>
+                    </div>
+                    <div title="It is important to track the employment rate in Circular operations because this reflects the interest of an industry in Circular Economy!"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+
+                </div>
+                <div class="questions">
+
+                </div>
+                <div class="inputs">
+                    <input type="number" step="1" name="jobs1" min="0" max="5000" class="input" required>
+                    <input type="number" step="1" name="jobs2" min="0" max="5000" class="input" required>
+                    <input type="number" step="1" name="jobs3" min="0" max="5000" class="input" required>
+                </div>
+            </div>
+            <div class="wholeQuestion">
+                <div class="questions">
+                    <div class="question">
+                        <p>Number of Circular Projects(projects).</p>
+                    </div>
+                    <div title="New Circular ideas are born every day, that drives industries in creating new teams working exclusively in Circular Projects!"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="inputs">
+                    <input type="number" step="1" name="project1" min="0" max="50" class="input" required>
+                    <input type="number" step="1" name="project2" min="0" max="50" class="input" required>
+                    <input type="number" step="1" name="project3" min="0" max="50" class="input" required>
+                </div>
+            </div>
+            <div class="wholeQuestion">
+                <div class="questions">
+                    <div class="question">
+                        <p>Ratio of Capital founds spent on R&D for Circular Ideas($)</p>
+                    </div>
+                    <div title="One more metric of how much an industry is interested in a circular way is the funds provided for Research and Development on this field!"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="inputs">
+                    <input type="number" step="0.01" name="capital1" min="0" max="100" class="input" required>
+                    <input type="number" step="0.01" name="capital2" min="0" max="100" class="input" required>
+                    <input type="number" step="0.01" name="capital3" min="0" max="100" class="input" required>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <p><input type="submit" value="submit"/></p>
+</form>
+
 {% endblock%}

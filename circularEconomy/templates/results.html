@@ -1,0 +1,485 @@
+{% extends "base.html" %}
+{% block title %}Form page{% endblock%}
+{% block content %}
+<script>
+
+
+</script>
+<h1 style="text-align: center;">Industry Results</h1>
+
+<div id="container">
+    <div class="row">
+
+
+        <div id="resultSum" class="col-4">
+            <div class="col border border-3 border-dark mt-5">
+                <p><u><h1 class="display-2">Your Score</h1></u></p>
+                <div class="mt-5">
+
+                    <h1 class="display-1">{{ value.totalScore }} / 20</h1></p>
+                </div>
+                <div>
+                    <h1 class="display-3">{{ 100 -value.totalScore100 }} to Go!</h1>
+                    <div id="bar" class="progress mt-5 mb-5">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="{{ value.totalScore100 }}"
+                             aria-valuemin="0" aria-valuemax="100" style="width: {{ value.totalScore100 }}%">
+                            {{ value.totalScore100 }} %
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col border border-3 border-dark mt-5">
+                <canvas id="myChart" width="400" height="400"></canvas>
+            </div>
+        </div>
+
+
+        <div id="resultExtend" class="col-8 align-self-center mt-5">
+            <button type="button" class="collapsible">Production and Consumption</button>
+            <div class="content table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Indicator</th>
+                        <th scope="col">% change between {{ value.year1 }} - {{ value.year2 }}</th>
+                        <th scope="col">% change between {{ value.year2 }} - {{ value.year3 }}</th>
+                        <th scope="col">Latest Value</th>
+                        <th scope="col">Score(0,1,2)</th>
+                        <th scope="col">Plot</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">Ratio of Recycled Materials In Average Vehicle Production(%)</th>
+                        <td>{{ value.first.recPer1 }}</td>
+                        <td>{{ value.first.recPer1 }}</td>
+                        <td>{{ value.first.rec3 }}</td>
+                        <td>{{ value.first.recScore }}</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal"
+                                    onclick="makePlot('{{ value.year1 }}','{{ value.year2 }}', '{{ value.year3 }}', '{{ value.first.rec1 }}', '{{ value.first.rec2 }}', '{{ value.first.rec3 }}', 'Recycled')">
+                                Plot
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Time of Disassembly in Average Vehicle(hours)</th>
+                        <td>{{ value.first.disassemblyPer1 }}</td>
+                        <td>{{ value.first.disassemblyPer2 }}</td>
+                        <td>{{ value.first.disassembly3 }}</td>
+                        <td>{{ value.first.disassemblyScore }}</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal"
+                                    onclick="makePlot('{{ value.year1 }}','{{ value.year2 }}', '{{ value.year3 }}', '{{ value.first.disassembly1 }}', '{{ value.first.disassembly2 }}', '{{ value.first.disassembly3 }}', 'Disassembly')">
+                                Plot
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Energy Consumption of an Average Vehicle(kWh)</th>
+                        <td>{{ value.first.energyPer1 }}</td>
+                        <td>{{ value.first.energyPer2 }}</td>
+                        <td>{{ value.first.energy3 }}</td>
+                        <td>{{ value.first.energyScore }}</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal"
+                                    onclick="makePlot('{{ value.year1 }}','{{ value.year2 }}', '{{ value.year3 }}', '{{ value.first.energy1 }}', '{{ value.first.energy2 }}', '{{ value.first.energy3 }}', 'Energy')">
+                                Plot
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Co^2 Emissions for the Production of an Average Vehicle(tonnes)</th>
+                        <td>{{ value.first.co2Per1 }}</td>
+                        <td>{{ value.first.co2Per2 }}</td>
+                        <td>{{ value.first.co23 }}</td>
+                        <td>{{ value.first.co2Score }}</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal"
+                                    onclick="makePlot('{{ value.year1 }}','{{ value.year2 }}', '{{ value.year3 }}', '{{ value.first.co21 }}', '{{ value.first.co22 }}', '{{ value.first.co23 }}', 'Co^2')">
+                                Plot
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Material loss for the Production of an Average Vehicle(tonnes)</th>
+                        <td>{{ value.first.lossPer1 }}</td>
+                        <td>{{ value.first.lossPer2 }}</td>
+                        <td>{{ value.first.loss3 }}</td>
+                        <td>N/A</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal"
+                                    onclick="makePlot('{{ value.year1 }}','{{ value.year2 }}', '{{ value.year3 }}', '{{ value.first.loss1 }}', '{{ value.first.loss2 }}', '{{ value.first.loss3 }}' , 'Material Loss')">
+                                Plot
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Water used for the Production of an Average Vehicle(liter)</th>
+                        <td>{{ value.first.waterPer1 }}</td>
+                        <td>{{ value.first.waterPer2 }}</td>
+                        <td>{{ value.first.water3 }}</td>
+                        <td>{{ value.first.waterScore }}</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal"
+                                    onclick="makePlot('{{ value.year1 }}','{{ value.year2 }}', '{{ value.year3 }}', '{{ value.first.water1 }}', '{{ value.first.water2 }}', '{{ value.first.water3 }}', 'Water')">
+                                Plot
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Number of Vehicle Parts with Remote Information Technologies(parts)</th>
+                        <td>{{ value.first.partsPer1 }}</td>
+                        <td>{{ value.first.partsPer2 }}</td>
+                        <td>{{ value.first.parts3 }}</td>
+                        <td>N/A</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal"
+                                    onclick="makePlot('{{ value.year1 }}','{{ value.year2 }}', '{{ value.year3 }}', '{{ value.first.parts1 }}', '{{ value.first.parts2 }}', '{{ value.first.parts3 }}' , ' Vehicle Parts')">
+                                Plot
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Ratio of Vehicles Checked(%)</th>
+                        <td>{{ value.first.checkPer1 }}</td>
+                        <td>{{ value.first.checkPer2 }}</td>
+                        <td>{{ value.first.check3 }}</td>
+                        <td>{{ value.first.checkScore }}</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal"
+                                    onclick="makePlot('{{ value.year1 }}','{{ value.year2 }}', '{{ value.year3 }}', '{{ value.first.check1 }}', '{{ value.first.check2 }}', '{{ value.first.check3 }}', 'Vehicle Checks')">
+                                Plot
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="button" class="collapsible">Waste Management</button>
+            <div class="content table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Indicator</th>
+                        <th scope="col">% change between {{ value.year1 }} - {{ value.year2 }}</th>
+                        <th scope="col">% change between {{ value.year2 }} - {{ value.year3 }}</th>
+                        <th scope="col">Value</th>
+                        <th scope="col">Score(0,1,2)</th>
+                        <th scope="col">Plot</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">Mass Ratio of EOL Vehicles which will be reused/recycled(%)</th>
+                        <td>{{ value.second.reusedPer1 }} / {{ value.second.recyclingPer1 }}</td>
+                        <td>{{ value.second.reusedPer2 }} / {{ value.second.recyclingPer2 }}</td>
+                        <td>{{ value.second.reused3 }} / {{ value.second.recycling3 }}</td>
+                        <td>{{ value.second.re2Score }}</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal"
+                                    onclick="makePlot2('{{ value.year1 }}','{{ value.year2 }}', '{{ value.year3 }}', '{{ value.second.reused1 }}', '{{ value.second.reused2 }}', '{{ value.second.reused3 }}' , '{{ value.second.recycling1 }}', '{{ value.second.recycling2 }}', '{{ value.second.recycling3 }}')">
+                                Plot
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Ratio of EOL Vehicle Parts which will be remanufactured(%)</th>
+                        <td>{{ value.second.remanufacturedPer1 }}</td>
+                        <td>{{ value.second.remanufacturedPer2 }}</td>
+                        <td>{{ value.second.remanufactured3 }}</td>
+                        <td>{{ value.second.remanufacturedScore }}</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal"
+                                    onclick="makePlot('{{ value.year1 }}','{{ value.year2 }}', '{{ value.year3 }}', '{{ value.second.remanufactured1 }}', '{{ value.second.remanufactured2 }}', '{{ value.second.remanufactured3 }}', 'Remanufactured')">
+                                Plot
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Ratio of EOL Vehicles retrieved Properly(%)</th>
+                        <td>{{ value.second.eolPer1 }}</td>
+                        <td>{{ value.second.eolPer2 }}</td>
+                        <td>{{ value.second.eol3 }}</td>
+                        <td>{{ value.second.eolScore }}</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal"
+                                    onclick="makePlot('{{ value.year1 }}','{{ value.year2 }}', '{{ value.year3 }}', '{{ value.second.eol1 }}', '{{ value.second.eol2 }}', '{{ value.second.eol3 }}', 'Recovery')">
+                                Plot
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="button" class="collapsible">Secondary Materials</button>
+            <div class="content">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Indicator</th>
+                        <th scope="col">% change between {{ value.year1 }} - {{ value.year2 }}</th>
+                        <th scope="col">% change between {{ value.year2 }} - {{ value.year3 }}</th>
+                        <th scope="col">Value</th>
+                        <th scope="col">Score(0,1,2)</th>
+                        <th scope="col">Plot</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">Ratio of non-Virgin Materials on Average Car(%)</th>
+                        <td>{{ value.third.secPer1 }}</td>
+                        <td>{{ value.third.secPer2 }}</td>
+                        <td>{{ value.third.sec3 }}</td>
+                        <td>{{ value.third.secScore }}</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal"
+                                    onclick="makePlot('{{ value.year1 }}','{{ value.year2 }}', '{{ value.year3 }}', '{{ value.third.sec1 }}', '{{ value.third.sec2 }}', '{{ value.third.sec3 }}', 'Non-Virgin Material' )">
+                                Plot
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Ratio of EOL vehicles which feeds further Industries(%)</th>
+                        <td>{{ value.third.feedPer1 }}</td>
+                        <td>{{ value.third.feedPer2 }}</td>
+                        <td>{{ value.third.feed3 }}</td>
+                        <td>N/A</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal"
+                                    onclick="makePlot('{{ value.year1 }}','{{ value.year2 }}', '{{ value.year3 }}', '{{ value.third.feed1 }}', '{{ value.third.feed2 }}', '{{ value.third.feed3 }}', 'Industrial Material Feed')">
+                                Plot
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="button" class="collapsible">Competiveness and Innovation</button>
+            <div class="content">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Indicator</th>
+                        <th scope="col">% change between {{ value.year1 }} - {{ value.year2 }}</th>
+                        <th scope="col">% change between {{ value.year2 }} - {{ value.year3 }}</th>
+                        <th scope="col">Value</th>
+                        <th scope="col">Score(0,1,2)</th>
+                        <th scope="col">Plot</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">Number of Jobs on with any Circular Activity(jobs)</th>
+                        <td>{{ value.forth.jobsPer1 }}</td>
+                        <td>{{ value.forth.jobsPer2 }}</td>
+                        <td>{{ value.forth.jobs3 }}</td>
+                        <td>N/A</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal"
+                                    onclick="makePlot('{{ value.year1 }}','{{ value.year2 }}', '{{ value.year3 }}', '{{ value.forth.jobs1 }}', '{{ value.forth.jobs2 }}', '{{ value.forth.jobs3 }}', 'Jobs')">
+                                Plot
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Number of Circular Projects(projects)</th>
+                        <td>{{ value.forth.projectPer1 }}</td>
+                        <td>{{ value.forth.projectPer2 }}</td>
+                        <td>{{ value.forth.project3 }}</td>
+                        <td>N/A</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal"
+                                    onclick="makePlot('{{ value.year1 }}','{{ value.year2 }}', '{{ value.year3 }}', '{{ value.forth.project1 }}', '{{ value.forth.project2 }}', '{{ value.forth.project3 }}', 'Projects')">
+                                Plot
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Capital spent on R&D for Circular Ideas($)</th>
+                        <td>{{ value.forth.capitalPer1 }}</td>
+                        <td>{{ value.forth.capitalPer2 }}</td>
+                        <td>{{ value.forth.capital3 }}</td>
+                        <td>N/A</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#exampleModal"
+                                    onclick="makePlot('{{ value.year1 }}','{{ value.year2 }}', '{{ value.year3 }}', '{{ value.forth.capital1 }}', '{{ value.forth.capital2 }}', '{{ value.forth.capital3 }}', 'Capital')">
+                                Plot
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Plot</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <canvas id="myPlot" width="400" height="400"></canvas>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var config = {
+    type: 'doughnut',
+    data: {
+        datasets: [{
+            data: [
+              {{ value.first.max }},
+              {{ value.second.max }},
+              {{ value.third.max }},
+              {{ value.forth.max }},
+            ],
+            backgroundColor: [
+              "#F7464A",
+              "#46BFBD",
+              "#FDB45C",
+              "#949FB1",
+            ],
+            label: 'Dataset 1'
+        }],
+        labels: [
+          "Production-Consumption",
+          "Waste Management",
+          "Secondary Materials",
+          "Competiveness and Innovation",
+        ]
+    },
+    options: {
+        responsive: true,
+        legend: {
+            position: 'top',
+        },
+        title: {
+            display: true,
+            text: 'Category Progress Comparison'
+        },
+        animation: {
+            animateScale: true,
+            animateRotate: true
+        }
+    }
+};
+
+
+    var myDoughnutChart = new Chart(ctx, config);
+
+    function makePlot(y1,y2,y3,v1,v2,v3, name){
+            console.log(v3)
+            console.log(v1)
+            console.log(v2)
+            var ctx1 = document.getElementById('myPlot').getContext('2d');
+            var config1 = {
+            type: 'line',
+            data: {
+                datasets: [{
+                    data: [
+                        v1,
+                        v2,
+                        v3,
+                    ],
+                    label: name,
+                    borderColor: "#3e95cd",
+                    fill: false
+                    }],
+                    labels: [
+                        {{ value.year1 }},
+                        {{ value.year2 }},
+                        {{ value.year3 }},
+                    ]
+                },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Plot'
+                },
+
+            }
+            };
+        var myLineChart = new Chart(ctx1, config1);
+     }
+     function makePlot2(y1,y2,y3,v1,v2,v3,v4,v5,v6){
+            console.log(v3)
+            console.log(v1)
+            console.log(v2)
+            var ctx1 = document.getElementById('myPlot').getContext('2d');
+            var config1 = {
+            type: 'line',
+            data: {
+                datasets: [{
+                    data: [
+                        v1,
+                        v2,
+                        v3,
+                    ],
+                    label: "Reused",
+                    borderColor: "#3e95cd",
+                    fill: false
+                    }, {
+                        data: [
+                        v4,
+                        v5,
+                        v6,
+                    ],
+                    label: "Recycled",
+                    borderColor: "#e8c3b9",
+                    fill: false
+                    }],
+                    labels: [
+                        {{ value.year1 }},
+                        {{ value.year2 }},
+                        {{ value.year3 }},
+                    ]
+                },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Plot'
+                },
+
+            }
+            };
+        var myLineChart = new Chart(ctx1, config1);
+     }
+
+
+
+</script>
+
+{% endblock%}
