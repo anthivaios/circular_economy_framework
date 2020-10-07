@@ -3,36 +3,81 @@ from flask import Flask, redirect, url_for, render_template, request
 from help import get_change, maxPer
 
 
-class third:
-    def __init__(self):
-        self.sec1 = request.form["sec1"]
-        self.sec2 = request.form["sec2"]
-        self.sec3 = request.form["sec3"]
-        self.secPer1 = float(get_change(self.sec2, self.sec1))
-        self.secPer2 = float(get_change(self.sec3, self.sec2))
+class third():
+    def __init__(self, req):
+        self.sec1 = req.form["sec1"]
+        self.sec2 = req.form["sec2"]
+        self.sec3 = req.form["sec3"]
+        self.secPer1 = self.setPer(self.sec2, self.sec1)
+        self.secPer2 = self.setPer(self.sec3, self.sec2)
+
+        self.feed1 = req.form["feed1"]
+        self.feed2 = req.form["feed2"]
+        self.feed3 = req.form["feed3"]
+        self.feedPer1 = self.setPer(self.feed2, self.feed1)
+        self.feedPer2 = self.setPer(self.feed3, self.feed2)
+
+        self.secScore = self.setSecScore()
+        self.perList = self.setList()
+        self.max = self.setMax()
+        self.secondaryScore = self.setSecondaryScore()
+
+    def setPer(self, v2, v1):
+        return float(get_change(v2, v1))
+
+    def setMax(self):
+        return maxPer(self.perList)
+
+    def setList(self):
+        tList = [self.secPer1, self.secPer2, self.feedPer1, self.feedPer2]
+        return tList
+
+    def setSecondaryScore(self):
+        return self.getSecScore()
+
+    def getSecondaryScore(self):
+        return self.secondaryScore
+
+    def setSecScore(self):
         if float(self.sec3) >= 40:
-            self.secScore = 2
+            return 2
         elif float(self.sec3) >= 30:
-            self.secScore = 1
+            return 1
         else:
-            self.secScore = 0
+            return 0
 
-        self.perList = [self.secPer1]
-        self.perList.append(self.secPer2)
+    def getSecScore(self):
+        return self.secScore
 
-        self.feed1 = request.form["feed1"]
-        self.feed2 = request.form["feed2"]
-        self.feed3 = request.form["feed3"]
-        self.feedPer1 = float(get_change(self.feed2, self.feed1))
-        self.feedPer2 = float(get_change(self.feed3, self.feed2))
+    def getSec1(self):
+        return self.sec1
 
-        self.perList.append(self.feedPer1)
-        self.perList.append(self.feedPer2)
+    def getSec2(self):
+        return self.sec2
 
-        self.secondaryScore = self.secScore
+    def getSec3(self):
+        return self.sec3
 
-        self.max = maxPer(self.perList)
+    def getSecPer1(self):
+        return self.secPer1
 
+    def getSecPer2(self):
+        return self.secPer2
 
-def getThird():
-    return third()
+    def getFeed1(self):
+        return self.feed1
+
+    def getFeed2(self):
+        return self.feed2
+
+    def getFeed3(self):
+        return self.feed3
+
+    def getFeedPer1(self):
+        return self.feedPer1
+
+    def getFeedPer2(self):
+        return self.feedPer2
+
+    def getMax(self):
+        return self.max
