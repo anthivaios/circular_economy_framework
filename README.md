@@ -11,10 +11,11 @@ measurement of transition to circular economy.
 
 ### install project requirements
  install requirements  
- 'pip install -r requirements.txt'
+ `pip install -r requirements.txt`
  
- after adding a new library
- 'pip freeze > requirements.txt'
+ after adding a new library  
+ `pip freeze > requirements.txt`
+ 
  
  ### run project
  **python app.py**
