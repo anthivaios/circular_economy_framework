@@ -2,6 +2,7 @@ from flask import Flask, redirect, url_for, render_template, request
 
 from help import get_change, maxPer
 
+
 class forth():
     def __init__(self, req):
         self.jobs1 = req.form["jobs1"]
@@ -21,7 +22,6 @@ class forth():
         self.capital3 = req.form["capital3"]
         self.capitalPer1 = self.setPer(self.capital2, self.capital1)
         self.capitalPer2 = self.setPer(self.capital3, self.capital2)
-
 
         self.perList = self.setList()
         self.max = self.setMax()

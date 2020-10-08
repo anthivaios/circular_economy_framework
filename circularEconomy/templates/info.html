@@ -1,138 +1,278 @@
 {% extends "base.html" %}
 {% block title %}Form page{% endblock%}
 {% block content %}
-<p>Please fill the following so we can rate your automobile industry</p>
-<div>
-    <form>
-        <div>
-            <label>Number of vehicles Remanufactured this year:</label>
-            <textarea id="mRemanufactured" rows="1" cols='2'></textarea>
-        </div>
-        <div class="form-group">
-            <label>Number of vehicles Produced this year:</label>
-            <textarea class="form-control" id="mTotal" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Mass of Reused Material used in Production:</label>
-            <textarea class="form-control" id="mReused" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Total mass of Material used in production: </label>
-            <textarea class="form-control" id="pMass" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Mass of material used in Production and can be recycled: </label>
-            <textarea class="form-control" id="mRecycle" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Co2 emissions of last year: </label>
-            <textarea class="form-control" id="co2" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Mass of Production's waste:</label>
-            <textarea class="form-control" id="mWaste" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Demand of raw material this year:</label>
-            <textarea class="form-control" id="rawMaterialThis" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Demand of raw material last year:</label>
-            <textarea class="form-control" id="rawMaterialLast" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Number of parts with installed IOT technologies (for check control):</label>
-            <textarea class="form-control" id="partsIOT" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Total number of parts used:</label>
-            <textarea class="form-control" id="partsTotal" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Number of vehicles checked for Repair this Year: </label>
-            <textarea class="form-control" id="vRepairedThis" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Number of vehicles checked for Repair last Year: </label>
-            <textarea class="form-control" id="vRepairedLast" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Mass of material than can be reused after EOL of vehicles: </label>
-            <textarea class="form-control" id="mReusedEOL" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Mass of material than can be recycled after EOL of vehicles: </label>
-            <textarea class="form-control" id="mRecycledEOL" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Total mass of those EOL vehicles: </label>
-            <textarea class="form-control" id="mTotalEOL" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Number of vehicles which will be remanufactured: </label>
-            <textarea class="form-control" id="vRemanufactured" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Total number of EOL vehicles: </label>
-            <textarea class="form-control" id="vTotalEOL" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Number of recovery centers this Year: </label>
-            <textarea class="form-control" id="recoveryThis" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Number of recovery centers last Year: </label>
-            <textarea class="form-control" id="recoveryLast" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Cost of sutisfying demand without reused material: </label>
-            <textarea class="form-control" id="cWithout" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Cost of sutisfying demand with reused material also: </label>
-            <textarea class="form-control" id="cWith" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Mass of reused material used: </label>
-            <textarea class="form-control" id="usedReused" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Number of reused parts from EOL vehicles: </label>
-            <textarea class="form-control" id="nReusedEOL" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Total number of parts used by the industry: </label>
-            <textarea class="form-control" id="nTotal" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Demand of raw material this year</label>
-            <textarea class="form-control" id="demandThis" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Demand of raw material last year</label>
-            <textarea class="form-control" id="demandLast" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Number of jobs in industry with the Linear Model: </label>
-            <textarea class="form-control" id="linearJobs" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Number of jobs in Industry using Circular technics: </label>
-            <textarea class="form-control" id="circularJobs" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Number of Circular projects this Year: </label>
-            <textarea class="form-control" id="projectsThis" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Number of Circular projects last Year: </label>
-            <textarea class="form-control" id="projectsLast" rows="1"></textarea>
-        </div>
+<h1>Indicators:</h1>
 
+<div class="container">
+    <div class="w-100"> <!--prwth-->
+        <h1 class="mt-4 mb-5" style="text-align: center;">Production and Consumption</h1>
+        <table class="table table-danger">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">Indicator</th>
+                <th scope="col">Description</th>
+                <th scope="col">Subcategory</th>
+                <th scope="col">Metric</th>
+                <th scope="col">Range</th>
+                <th scope="col">Values</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">Ratio of Recycled Materials in Average Vehicle Production</th>
+                <td>There are many materials on a Vehicle that can be
+                    provided by a recycling method, like plastic.
+                </td>
+                <td>%</td>
+                <td>Eco-Design Production</td>
+                <td>0 -100</td>
+                <td>(>= 40) ->2
+                    <br>(>=30 and < 40 ) -> 1
+                    <br>(< 30) ->0
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">Time of Disassemby on an Average Vehicle</th>
+                <td>The smaller time of a Vehicle's disassembly is a major
+                    factor for whether circularity processes are profitable.
+                </td>
+                <td>hours</td>
+                <td>Eco-Design Production</td>
+                <td>0 - 50</td>
+                <td>(<= 7) ->2
+                    <br>(>7 and <= 16 ) -> 1
+                    <br>(> 16) ->0
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">Energy Consumption for the Production of an Average Vehicle</th>
+                <td>Automobile Industries consume a lot of energy, so it is essential to monitor
+                    this.
+                </td>
+                <td>MWh</td>
+                <td>Water and Energy Consumption</td>
+                <td>0 - 6</td>
+                <td>(<= 2) ->2
+                    <br>(>2 and <= 2.4 ) -> 1
+                    <br>(> 2.4) ->0
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">Co2 emissions for the Production of an Average Vehicle</th>
+                <td>Co^2 emissions are really harmful for the environment
+                    while automobile industries produce high numbers of this
+                </td>
+                <td>tonnes</td>
+                <td>Waste Production</td>
+                <td>0 - 4</td>
+                <td>(<= 0.5) ->2
+                    <br>(>0.5 and <= 0.7 ) -> 1
+                    <br>(> 0,7) ->0
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">Material loss in the Production of an Average Vehicle</th>
+                <td>Significant mass of material is lost in the production Process.</td>
+                <td>tonnes</td>
+                <td>Waste Production</td>
+                <td>0 - 10</td>
+                <td>NCV</td>
+            </tr>
+            <tr>
+                <th scope="row">Water used in the Production of an Average Vehicle</th>
+                <td>In the production of a vehicle a huge amount of water is
+                    consumed.
+                </td>
+                <td>liter</td>
+                <td>Water and Energy Consumption</td>
+                <td>0 - 200</td>
+                <td>(<= 130) ->2
+                    <br>(>130 and <= 145 ) -> 1
+                    <br>(> 145) ->0
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">Number of parts with Remote Information Technologies on Average Vehicle</th>
+                <td>Remote Information Technologies help us find every problem and fix it
+                    expanding vehicle's life time.</td>
+                <td>parts</td>
+                <td>Maintenance and Repair</td>
+                <td>0 - 500</td>
+                <td>NCV</td>
+            </tr>
+            <tr>
+                <th scope="row">Ratio of Vehicle Checks</th>
+                <td>Tactical checks can prevent damages and expand vehicle's life time</td>
+                <td>%</td>
+                <td>Maintenance and Repair</td>
+                <td>0 - 100</td>
+                <td>(>= 90) ->2
+                    <br>(<90 and >= 60 ) -> 1
+                    <br>(< 145) ->0
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row"> <!--second-->
+        <h1 class="mt-4 mb-5" style="text-align: center;">Waste Management</h1>
+        <table class="table table-success">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">Indicator</th>
+                <th scope="col">Description</th>
+                <th scope="col">Subcategory</th>
+                <th scope="col">Metric</th>
+                <th scope="col">Range</th>
+                <th scope="col">Values</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">Mass Ratio of EOL vehicle waste which will be reused</th>
+                <td>Some parts of an EOL vehicle are going to be reused.</td>
+                <td>%</td>
+                <td>Recycle
+                    <br>Reuse
+                    <br>Remanufacture
+                </td>
+                <td>0 -100</td>
+                <td>Reused + Recycling:
+                    <br>(>= 85) ->2
+                    <br>(>= 70 and <85) -> 1
+                    <br>(< 70) -> 0
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">Ratio of EOL Vehicles' Parts which will be remanufactured</th>
+                <td>Some of EOL parts can be remanufactured and enter the Production again.</td>
+                <td>%</td>
+                <td>Recycle
+                    <br>Reuse
+                    <br>Remanufacture
+                </td>
+                <td>0 -100</td>
+                <td>(>= 15) ->2
+                    <br>(>= 9 and <15) -> 1
+                    <br>(<9) -> 0
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">Mass Ratio of EOL Vehicles which will be recycled</th>
+                <td>Some parts of an EOL vehicle are going to be recycled.</td>
+                <td>%</td>
+                <td>Recycle
+                    <br>Reuse
+                    <br>Remanufacture
+                </td>
+                <td>0 -100</td>
+                <td>Reused + Recycling:
+                    <br>(>= 85) ->2
+                    <br>(>= 70 and <85) -> 1
+                    <br>(< 70) -> 0
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">Ratio of EOL Vehicles retrieved properly</th>
+                <td>It is important for EOL vehicles to be retrieved properly so
+                    the Circular Processes will be applied on them.
+                </td>
+                <td>%</td>
+                <td>EOL Retrieve Centers</td>
+                <td>0 - 100</td>
+                <td><br>(>= 90) ->2
+                    <br>(< 90 and >=75) -> 1
+                    <br>(< 70) -> 0
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row"> <!--third-->
+        <h1 class="mt-4 mb-5" style="text-align: center;">Secondary Materials</h1>
+        <table class="table table-warning">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">Indicator</th>
+                <th scope="col">Description</th>
+                <th scope="col">Subcategory</th>
+                <th scope="col">Metric</th>
+                <th scope="col">Range</th>
+                <th scope="col">Values</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">Average Ratio of non Virgin Material of an Average Vehicle</th>
+                <td>It is important for Automotive Industry to use non-Virgin Material also.</td>
+                <td>%</td>
+                <td>Secondary-Demand</td>
+                <td>0 -100</td>
+                <td><br>(>= 40) ->2
+                    <br>(< 40 and >=30) -> 1
+                    <br>(< 30) -> 0
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">Mass Ratio of EOL Vehicles that feeds further Industries</th>
+                <td>Some of the secondary material coming from end of life
+                    feed other Industries creating a loop.
+                </td>
+                <td>%</td>
+                <td>EOL Demand Cover</td>
+                <td>0 - 100</td>
+                <td>NCV</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row"> <!--forth-->
+        <h1 class="mt-4 mb-5" style="text-align: center;">Competiveness and Innovation</h1>
+        <table class="table table-info">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">Indicator</th>
+                <th scope="col">Description</th>
+                <th scope="col">Subcategory</th>
+                <th scope="col">Metric</th>
+                <th scope="col">Range</th>
+                <th scope="col">Values</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">Number of Employees working on Jobs which include any Circular Process</th>
+                <td>Circular Economy made place for new jobs.</td>
+                <td>employees</td>
+                <td>Employment</td>
+                <td>0 - 5000</td>
+                <td>NCV</td>
+            </tr>
+            <tr>
+                <th scope="row">Number of Circular Projects</th>
+                <td>Auto Industries create more and more projects for circular ideas.</td>
+                <td>projects</td>
+                <td>Investment</td>
+                <td>0 - 100</td>
+                <td>NCV</td>
+            </tr>
+            <tr>
+                <th scope="row">Ratio of Capital founds spent on R&D for Circular Ideas</th>
+                <td>It is important for an Industry to be a pioneer and invest
+                    in circular ideas.
+                </td>
+                <td>%</td>
+                <td>Investment</td>
+                <td>0 - 100</td>
+                <td>NCV</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class = "row">
+        <h3>NVC = NO COMPARABLE VALUE</h3>
+    </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
-
-
-    </form>
 </div>
+
 {% endblock%}
