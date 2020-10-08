@@ -4,20 +4,20 @@ Theses : Circular Economy Framework
 ### Description
 This project applies the Theses Framework we created,  
 on an Automotive Industry, with main goal to monitor  
-changes of specific Indicators, which are related with 
+changes of specific Indicators, which are related with  
 measurement of transition to circular economy.
 
 
 
 ### install project requirements
  install requirements  
- " pip install -r requirements.txt
+ "pip install -r requirements.txt
  
  after adding a new library
- " pip freeze > requirements.txt
+ "pip freeze > requirements.txt
  
  ### run project
- ** python app.py
+ **python app.py
  
  ### Form Score Ratings
  recycled material: (>= 40) ->2 | (>=30) -> 1 | 0  
