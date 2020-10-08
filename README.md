@@ -11,13 +11,13 @@ measurement of transition to circular economy.
 
 ### install project requirements
  install requirements  
- "pip install -r requirements.txt
+ "pip install -r requirements.txt"
  
  after adding a new library
- "pip freeze > requirements.txt
+ "pip freeze > requirements.txt"
  
  ### run project
- **python app.py
+ **python app.py**
  
  ### Form Score Ratings
  recycled material: (>= 40) ->2 | (>=30) -> 1 | 0  
@@ -36,8 +36,8 @@ measurement of transition to circular economy.
  
  ### guides for pyCharm
   automatic imports: 
-  ** alt + enter
+  ** alt + enter **
   
   formatted lines:
-  ** ctrl + alt + l
+  ** ctrl + alt + l **
  
