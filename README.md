@@ -36,9 +36,9 @@ measurement of transition to circular economy.
  
  
  ### guides for pyCharm
-  automatic imports: 
-  ** alt + enter **
+  automatic imports:   
+  **alt + enter**
   
-  formatted lines:
-  ** ctrl + alt + l **
+  formatted lines:  
+  **ctrl + alt + l**
  
