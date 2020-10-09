@@ -2,10 +2,12 @@
 {% block title %}Home page{% endblock%}
 {% block content %}
 <div id="container">
-    <div id="divCircular">
-        <div id="circText">
-            <h1>What is Circular economy?</h1>
-            <p class="w-75 h5 mt-5" style="margin-left: 12.5%;">The Circular Economy refers to an economic model that
+    <div class="row justify-content-center">
+
+        <div id="circ_Text" class="w-75 col square rounded mr-4 mt-7 mb-3 ml-5" style="background: #ff6666;">
+            <h1 style="text-align: center;">What is Circular economy?</h1>
+            <p class="w-75 h5 mt-5" style="margin-left: 12.5%;">The Circular Economy refers to an economic model
+                that
                 is regenerative intentionally and by design, based on
                 renewable energy sources, minimizes, detects and eliminates
                 waste with careful planning. One of many definitions of Circular
@@ -13,34 +15,39 @@
                 resources is retained in the economy for as long as possible and
                 waste production is minimized.</p>
         </div>
-        <div id="circImage">
+        <div id="circ_Image" class="w-25 mt-7 mb-3 mr-5">
             <img src="/static/img/circular2.jpg">
         </div>
+
     </div>
-    <div id="divAutomotive">
-        <div id="autoImage">
+    <div class="row justify-content-center">
+
+        <div id="auto_Image" class="w-25 mt-7 mb-4 ml-5">
             <img src="/static/img/auto.png">
         </div>
-        <div id="autoText">
-            <h1>The importance of Circular Economy in Automobile industry.</h1>
+        <div id="auto-Text" class="w-75 col square rounded ml-4 mt-7 mb-4 mr-5" style="background: #c0f95c;">
+            <h1 style="text-align: center;">The importance of Circular Economy in Automobile industry.</h1>
             <p class="w-75 h5 mt-5" style="margin-left: 12.5%;">The automotive
                 industry consumes large quantities of raw materials,
                 energy and water. It also produces large volumes of waste. It is
                 necessary to create a universal monitoring framework that will be
                 used as a guide for the adoption of circular economy models.</p>
         </div>
+
+
     </div>
-    <div id="divThisPage" class="w-75" style="margin-left: 12.5%;">
-        <div id="pageText">
-            <h1>What is the purpose of this page?</h1>
-            <p class="w-75 h5 mt-5" style="margin-left: 12.5%;">The importance of Circular Economy
-                cannot be doubted. So many companies,
-                organizations and even countries tried to make up their own framework,
-                which aims on monitoring the Circular Progress. There are frameworks with macro
+    <div class="row">
+        <div id="auto_Text" class="w-75 col square rounded ml-6 mt-7 mb-4 mr-6 " style="background: #ccf2ff;">
+            <h1 style="text-align: center;">What is the purpose of this page?</h1>
+            <p class="w-75 h5 mt-5 mb-5" style="margin-left: 12.5%;">The importance of Circular Economy
+                cannot be doubted. So many companies, organizations and even countries tried to make up
+                their own framework, which aims on monitoring the Circular Progress. There are frameworks with macro
                 (general) estimation i.e. countries and others with micro (more specific) i.e.
                 companies and even more. This page is a tool, which applies our monitoring framework
                 ,on Automobile Industries, based on mostly the EU general Monitoring Framework.</p>
         </div>
     </div>
+
+</div>
 </div>
 {% endblock%}

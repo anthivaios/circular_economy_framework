@@ -1,20 +1,21 @@
 {% extends "base.html" %}
-{% block title %}Form page{% endblock%}
+{% block title %}Indicators{% endblock%}
 {% block content %}
-<h1>Indicators:</h1>
-
-<div class="container">
-    <div class="w-100"> <!--prwth-->
+<div>
+    <h1>Indicators:</h1>
+</div>
+<div class="container1" style="width: 85%;margin-left:7.5%;">
+    <div class="row"> <!--prwth-->
         <h1 class="mt-4 mb-5">Production and Consumption</h1>
         <table class="table table-danger">
             <thead class="thead-light">
             <tr>
-                <th scope="col">Indicator</th>
-                <th scope="col">Description</th>
-                <th scope="col">Subcategory</th>
+                <th scope="col" style="width: 20%">Indicator</th>
+                <th scope="col" style="width: 25%">Description</th>
                 <th scope="col">Metric</th>
-                <th scope="col">Range</th>
-                <th scope="col">Values</th>
+                <th scope="col">Subcategory</th>
+                <th scope="col" style="width: 10%">Range</th>
+                <th scope="col" style="width: 17%">Values</th>
             </tr>
             </thead>
             <tbody>
@@ -25,10 +26,10 @@
                 </td>
                 <td>%</td>
                 <td>Eco-Design Production</td>
-                <td>0 -100</td>
-                <td>(>= 40) ->2
-                    <br>(>=30 and < 40 ) -> 1
-                    <br>(< 30) ->0
+                <td>0 - 100</td>
+                <td>(>= 40): 2
+                    <br>(>=30 & < 40 ): 1
+                    <br>(< 30): 0
                 </td>
             </tr>
             <tr>
@@ -39,9 +40,9 @@
                 <td>hours</td>
                 <td>Eco-Design Production</td>
                 <td>0 - 50</td>
-                <td>(<= 7) ->2
-                    <br>(>7 and <= 16 ) -> 1
-                    <br>(> 16) ->0
+                <td>(<= 7): 2
+                    <br>(>7 & <= 16 ): 1
+                    <br>(> 16): 0
                 </td>
             </tr>
             <tr>
@@ -52,9 +53,9 @@
                 <td>MWh</td>
                 <td>Water and Energy Consumption</td>
                 <td>0 - 6</td>
-                <td>(<= 2) ->2
-                    <br>(>2 and <= 2.4 ) -> 1
-                    <br>(> 2.4) ->0
+                <td>(<= 2): 2
+                    <br>(>2 & <= 2.4 ): 1
+                    <br>(> 2.4): 0
                 </td>
             </tr>
             <tr>
@@ -65,9 +66,9 @@
                 <td>tonnes</td>
                 <td>Waste Production</td>
                 <td>0 - 4</td>
-                <td>(<= 0.5) ->2
-                    <br>(>0.5 and <= 0.7 ) -> 1
-                    <br>(> 0,7) ->0
+                <td>(<= 0.5): 2
+                    <br>(>0.5 & <= 0.7 ): 1
+                    <br>(> 0.7): 0
                 </td>
             </tr>
             <tr>
@@ -86,15 +87,16 @@
                 <td>liter</td>
                 <td>Water and Energy Consumption</td>
                 <td>0 - 200</td>
-                <td>(<= 130) ->2
-                    <br>(>130 and <= 145 ) -> 1
-                    <br>(> 145) ->0
+                <td>(<= 130): 2
+                    <br>(>130 & <= 145 ): 1
+                    <br>(> 145): 0
                 </td>
             </tr>
             <tr>
                 <th scope="row">Number of parts with Remote Information Technologies on Average Vehicle</th>
                 <td>Remote Information Technologies help us find every problem and fix it
-                    expanding vehicle's life time.</td>
+                    expanding vehicle's life time.
+                </td>
                 <td>parts</td>
                 <td>Maintenance and Repair</td>
                 <td>0 - 500</td>
@@ -106,9 +108,9 @@
                 <td>%</td>
                 <td>Maintenance and Repair</td>
                 <td>0 - 100</td>
-                <td>(>= 90) ->2
-                    <br>(<90 and >= 60 ) -> 1
-                    <br>(< 145) ->0
+                <td>(>= 90): 2
+                    <br>(<90 & >= 60): 1
+                    <br>(< 145): 0
                 </td>
             </tr>
             </tbody>
@@ -119,12 +121,12 @@
         <table class="table table-success">
             <thead class="thead-light">
             <tr>
-                <th scope="col">Indicator</th>
-                <th scope="col">Description</th>
-                <th scope="col">Subcategory</th>
+                <th scope="col" style="width: 20%">Indicator</th>
+                <th scope="col" style="width: 25%">Description</th>
                 <th scope="col">Metric</th>
-                <th scope="col">Range</th>
-                <th scope="col">Values</th>
+                <th scope="col">Subcategory</th>
+                <th scope="col" style="width: 10%">Range</th>
+                <th scope="col" style="width: 17%">Values</th>
             </tr>
             </thead>
             <tbody>
@@ -138,9 +140,9 @@
                 </td>
                 <td>0 -100</td>
                 <td>Reused + Recycling:
-                    <br>(>= 85) ->2
-                    <br>(>= 70 and <85) -> 1
-                    <br>(< 70) -> 0
+                    <br>(>= 85): 2
+                    <br>(>= 70 & <85): 1
+                    <br>(< 70): 0
                 </td>
             </tr>
             <tr>
@@ -152,9 +154,9 @@
                     <br>Remanufacture
                 </td>
                 <td>0 -100</td>
-                <td>(>= 15) ->2
-                    <br>(>= 9 and <15) -> 1
-                    <br>(<9) -> 0
+                <td>(>= 15): 2
+                    <br>(>= 9 & <15): 1
+                    <br>(<9): 0
                 </td>
             </tr>
             <tr>
@@ -167,9 +169,9 @@
                 </td>
                 <td>0 -100</td>
                 <td>Reused + Recycling:
-                    <br>(>= 85) ->2
-                    <br>(>= 70 and <85) -> 1
-                    <br>(< 70) -> 0
+                    <br>(>= 85): 2
+                    <br>(>= 70 & <85): 1
+                    <br>(< 70): 0
                 </td>
             </tr>
             <tr>
@@ -180,9 +182,9 @@
                 <td>%</td>
                 <td>EOL Retrieve Centers</td>
                 <td>0 - 100</td>
-                <td><br>(>= 90) ->2
-                    <br>(< 90 and >=75) -> 1
-                    <br>(< 70) -> 0
+                <td>(>= 90): 2
+                    <br>(< 90 & >=75): 1
+                    <br>(< 70): 0
                 </td>
             </tr>
             </tbody>
@@ -193,12 +195,12 @@
         <table class="table table-warning">
             <thead class="thead-light">
             <tr>
-                <th scope="col">Indicator</th>
-                <th scope="col">Description</th>
-                <th scope="col">Subcategory</th>
+                <th scope="col" style="width: 20%">Indicator</th>
+                <th scope="col" style="width: 25%">Description</th>
                 <th scope="col">Metric</th>
-                <th scope="col">Range</th>
-                <th scope="col">Values</th>
+                <th scope="col">Subcategory</th>
+                <th scope="col" style="width: 10%">Range</th>
+                <th scope="col" style="width: 17%">Values</th>
             </tr>
             </thead>
             <tbody>
@@ -208,9 +210,9 @@
                 <td>%</td>
                 <td>Secondary-Demand</td>
                 <td>0 -100</td>
-                <td><br>(>= 40) ->2
-                    <br>(< 40 and >=30) -> 1
-                    <br>(< 30) -> 0
+                <td><(>= 40): 2
+                    <br>(< 40 & >=30): 1
+                    <br>(< 30): 0
                 </td>
             </tr>
             <tr>
@@ -231,12 +233,12 @@
         <table class="table table-info">
             <thead class="thead-light">
             <tr>
-                <th scope="col">Indicator</th>
-                <th scope="col">Description</th>
-                <th scope="col">Subcategory</th>
+                <th scope="col" style="width: 20%">Indicator</th>
+                <th scope="col" style="width: 25%">Description</th>
                 <th scope="col">Metric</th>
-                <th scope="col">Range</th>
-                <th scope="col">Values</th>
+                <th scope="col">Subcategory</th>
+                <th scope="col" style="width: 10%">Range</th>
+                <th scope="col" style="width: 17%">Values</th>
             </tr>
             </thead>
             <tbody>
@@ -269,7 +271,7 @@
             </tbody>
         </table>
     </div>
-    <div class = "row">
+    <div class="row">
         <h3><sup>*</sup>NVC = NO COMPARABLE VALUE</h3>
     </div>
 

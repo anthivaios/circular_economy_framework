@@ -19,5 +19,29 @@ for (i = 0; i < coll.length; i++) {
       content.style.display = "block";
     }
   });
-}
 
+ }
+
+$(window).on('load', function() {
+ var x = document.title;
+ $('.navbar-nav li').removeClass('active').addClass('inactive');
+ if(x == "Home page")
+    $('.navbar-nav li:nth-child(1)').addClass('active');
+  else if (x == "Form page")
+    $('.navbar-nav li:nth-child(2)').addClass('active');
+  else if (x = "Indicators")
+    $('.navbar-nav li:nth-child(3)').addClass('active');
+
+});
+$(document).on('keypress', function(e){
+    // "\" pressed
+    if(e.which === 96){
+        $(':input[type="number"]').each(function(e){
+            $(this).val(1)
+        });
+        var year = 2020
+        $(':input[type="text"]').each(function(e){
+            $(this).val(year++)
+        });
+    }
+});

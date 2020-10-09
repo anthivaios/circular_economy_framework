@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
           integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
           crossorigin="anonymous"/>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='../static/img/recycle.png') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/mainpage.css') }}">
     <title>{% block title %}{% endblock%}</title>
 </head>
@@ -24,10 +25,10 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item ">
                 <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" id="lul">
                 <a class="nav-link" href="form">Rate Me</a>
             </li>
             <li class="nav-item">

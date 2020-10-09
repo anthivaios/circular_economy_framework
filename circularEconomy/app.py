@@ -1,4 +1,6 @@
-from flask import Flask, redirect, url_for, render_template, request
+import os
+
+from flask import Flask, redirect, url_for, render_template, request, send_from_directory
 from allTogether import allTogether
 
 app = Flask(__name__)
