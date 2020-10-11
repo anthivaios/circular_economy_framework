@@ -4,7 +4,7 @@ def get_change(current, previous):
     try:
         return format(((float(current) - float(previous)) / float(previous)) * 100.0, '.2f')
     except ZeroDivisionError:
-        return float('inf')
+        return 10001
 
 def maxPer(l):
     m = max(l)

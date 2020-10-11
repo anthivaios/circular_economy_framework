@@ -21,6 +21,16 @@ for (i = 0; i < coll.length; i++) {
   });
 
  }
+ function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+function generateRandomNumber(mi, ma) {
+    var min = mi;
+    var max = ma;
+    highlightedNumber = (Math.random() * (max - min) + min).toFixed(2);
+    return parseFloat(highlightedNumber);
+};
 
 $(window).on('load', function() {
  var x = document.title;
@@ -29,17 +39,96 @@ $(window).on('load', function() {
     $('.navbar-nav li:nth-child(1)').addClass('active');
   else if (x == "Form page")
     $('.navbar-nav li:nth-child(2)').addClass('active');
-  else if (x = "Indicators")
+  else if (x == "Indicators")
     $('.navbar-nav li:nth-child(3)').addClass('active');
 
 });
 $(document).on('keypress', function(e){
-    // "\" pressed
     if(e.which === 96){
-        $(':input[type="number"]').each(function(e){
-            $(this).val(1)
-        });
-        var year = 2020
+
+        var elms = document.getElementsByClassName('rec')
+        for (var i = 0; i < elms.length; i++)
+           elms[i].setAttribute("value", generateRandomNumber(0.00, 100.00));
+
+        var elms = document.getElementsByClassName('disassembly')
+        for (var i = 0; i < elms.length; i++)
+           elms[i].setAttribute("value", generateRandomNumber(0.00, 50.00));
+
+        var elms = document.getElementsByClassName('energy')
+        for (var i = 0; i < elms.length; i++)
+           elms[i].setAttribute("value", generateRandomNumber(0.00, 6.00));
+
+        var elms = document.getElementsByClassName('co2')
+        for (var i = 0; i < elms.length; i++)
+           elms[i].setAttribute("value", generateRandomNumber(0.00, 4.00));
+
+        var elms = document.getElementsByClassName('loss')
+        for (var i = 0; i < elms.length; i++)
+           elms[i].setAttribute("value", generateRandomNumber(0.00, 10.00));
+
+        var elms = document.getElementsByClassName('water')
+        for (var i = 0; i < elms.length; i++)
+           elms[i].setAttribute("value", generateRandomNumber(0.00, 200.00));
+
+
+        var elms = document.getElementsByClassName('parts')
+        for (var i = 0; i < elms.length; i++)
+           elms[i].setAttribute("value", getRandomInt(501));
+
+        var elms = document.getElementsByClassName('check')
+        for (var i = 0; i < elms.length; i++)
+           elms[i].setAttribute("value", generateRandomNumber(0.00, 100.00));
+
+        var elms = document.getElementsByClassName('remanufactured')
+        for (var i = 0; i < elms.length; i++)
+           elms[i].setAttribute("value", generateRandomNumber(0.00, 100.00));
+
+
+            var elms = document.getElementsByClassName('reused')
+            var elms1 = document.getElementsByClassName('recycling')
+            for (var i = 0; i < elms.length; i++){
+                do{
+                    var num1 = generateRandomNumber(0.00, 100.00);
+                    var num2 = generateRandomNumber(0.00, 100.00);
+                    console.log(typeof(num1));
+                    console.log(typeof(num2));
+                }
+                while((num1 + num2) > 100.00 )
+
+                elms[i].setAttribute("value", num1);
+                elms1[i].setAttribute("value", num2);
+            }
+
+
+
+        var elms = document.getElementsByClassName('eol')
+        for (var i = 0; i < elms.length; i++)
+           elms[i].setAttribute("value", generateRandomNumber(0.00, 100.00));
+
+        var elms = document.getElementsByClassName('sec')
+        for (var i = 0; i < elms.length; i++)
+           elms[i].setAttribute("value", generateRandomNumber(0.00, 100.00));
+
+        var elms = document.getElementsByClassName('feed')
+        for (var i = 0; i < elms.length; i++)
+           elms[i].setAttribute("value", generateRandomNumber(0.00, 100.00));
+
+
+        var elms = document.getElementsByClassName('jobs')
+        for (var i = 0; i < elms.length; i++)
+           elms[i].setAttribute("value", getRandomInt(5001));
+
+        var elms = document.getElementsByClassName('project')
+        for (var i = 0; i < elms.length; i++)
+           elms[i].setAttribute("value", getRandomInt(51));
+
+        var elms = document.getElementsByClassName('capital')
+        for (var i = 0; i < elms.length; i++)
+           elms[i].setAttribute("value", generateRandomNumber(0.00, 100.00));
+
+
+
+        var year = 2002
         $(':input[type="text"]').each(function(e){
             $(this).val(year++)
         });

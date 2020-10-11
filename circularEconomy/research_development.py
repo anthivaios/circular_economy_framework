@@ -83,3 +83,6 @@ class forth():
 
     def getMax(self):
         return self.max
+
+    def setMax1(self, value):
+        self.max = value

@@ -62,9 +62,9 @@ class second():
             return 0
 
     def setRe2Score(self):
-        if float(self.reused3 + self.recycling3) >= 85:
+        if float( float(self.reused3) + float(self.recycling3)) >= 85:
             return 2
-        elif float(self.reused3 + self.recycling3) >= 70:
+        elif float(float(self.reused3) + float(self.recycling3)) >= 70:
             return 1
         else:
             return 0
@@ -148,3 +148,6 @@ class second():
 
     def getMax(self):
         return self.max
+
+    def setMax1(self, value):
+        self.max = value

@@ -79,5 +79,35 @@ class allTogether:
         self.setSecond(req)
         self.setThird(req)
         self.setForth(req)
+        self.isIt = False
+        if self.getFirst().getMax() > 10000:
+            self.getFirst().setMax1(10001)
+            self.isIt = True
+
+        if self.getSecond().getMax() > 10000:
+            self.getSecond().setMax1(10001)
+            self.isIt = True
+
+        if self.getThird().getMax() > 10000:
+            self.getThird().setMax1(10001)
+            self.isIt = True
+
+        if self.getForth().getMax() > 10000:
+            self.getForth().setMax1(10001)
+            self.isIt = True
+
+        if self.isIt:
+            if self.getFirst().getMax() < 10000:
+                self.getFirst().setMax1(0)
+
+            if self.getSecond().getMax() <= 10000:
+                self.getSecond().setMax1(0)
+
+            if self.getThird().getMax() <= 10000:
+                self.getThird().setMax1(0)
+
+            if self.getForth().getMax() < 10000:
+                self.getForth().setMax1(0)
+
         self.setTotalScore()
         self.setTotalScore100()

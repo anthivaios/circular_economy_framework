@@ -1,3 +1,22 @@
+#circ_Image{
+    transition: transform .2s;
+}
+
+#circ_Image:hover{
+    transform: scale(1.2);
+}
+
+#auto_Image{
+    transition: transform .2s;
+    margin-left: 2%;
+}
+
+#auto_Image:hover{
+    transform: scale(1.4);
+    z-index: 2;
+    margin-left: 6%;
+}
+
 .rounded {
     border-radius: 25px!important
 }
@@ -75,110 +94,14 @@ body{
 	float: left;
 	margin-left: 30%
 }
-#pageText{
-	border: 2px solid black;
-	float: left;
-	width: 94%;
-	height: 300px;
-	border-radius: 25px;
-	margin-left: 2%;
-	margin-right: 4%;
-	background: #ccf2ff;
-	margin-top: 50px;
-	text-align: center;
-}
 
-#autoImage{
-	border: 2px solid black;
-	float:left;
-	width: 25%;
-	height: 350px;
-	margin-top: 30px;
-	margin-left: 2%;
-	margin-right: 4%;
-}
 
-#autoText{
-	border: 2px solid black;
-	float: left;
-	width: 65%;
-	height: 300px;
-	border-radius: 25px;
-	background: #c0f95c;
-	margin-top: 50px;
-	text-align: center;
-}
-
-#circText{
-	border: 2px solid black;
-	float: left;
-	width: 65%;
-	height: 300px;
-	border-radius: 25px;
-	margin-left: 2%;
-	margin-right: 4%;
-	background: #fc9369;
-	margin-top: 30px;
-	text-align: center;
-}
 img{
     width:100%;
     height:100%;
 }
-#circImage{
-	border: 2px solid black;
-	float:left;
-	width: 25%;
-	height: 300px;
-	margin-top: 30px;
-}
 
-#first2{
-	width: 100%;
-}
-#second2{
-	width: 100%;
-}
 
-#first{
-	border: 2px solid black;
-	float: left;
-	width: 45%;
-	height: 1100px;
-	border-radius: 25px;
-	background: #ff6666;
-	margin-left: 2.5%;
-	margin-right: 5%;
-}
-#second{
-	width: 45%;
-	float: left;
-}
-#sec{
-	border: 2px solid black;
-	height: 500px;
-	border-radius: 25px;
-	background: #a6ff4d;
-	margin-bottom : 60px;
-}
-
-#third{
-	border: 2px solid black;
-	height: 540px;
-	border-radius: 25px;
-	background: #ffffb3;
-}
-#forth{
-	float: left;
-	border: 2px solid black;
-	height: 600px;
-	width: 65%;
-	border-radius: 25px;
-	background: #ccf2ff;
-	margin-top: 60px;
-	margin-left: 17%;
-	
-}
 
 #pickYears{
 	margin-top: 30px;
@@ -195,27 +118,8 @@ p2{
 	font-size: 1.875em;
 	text-align: center;
 }
-.inputs{
-	float: left;
-	margin-left: 20%
-}
-.questions{
-	float: left;
-	margin-left: 10%
-}
-.input{
-	border-radius: 20px;
-	width: 25%
-}
-.question{
-	float: left;
-	margin-right: 20px;
-}
+
 .icon{
 	float: left;
 }
-.wholeQuestion{
-	float: left;
-	margin-top: 40px;
-	margin-bottom: 5px;
-}
+
