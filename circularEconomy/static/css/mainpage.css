@@ -1,4 +1,131 @@
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.dots{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+}
+
+.inp3{
+    width: 30%;
+}
+
+#nextBtn{
+    margin-right: 50%;
+}
+
+
+
+ /* Style the form */
+
+#regForm {
+  background-color: #e1e1e1;
+  margin: auto;
+  padding: 40px;
+  width: 80%;
+  min-width: 300px;
+}
+
+/* Style the input fields */
+
+
+
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #4CAF50;
+}
+
+#mainWindow{
+    border: 3px solid #e1e1e1;
+}
+.t2{
+    color: #f1f1f1;
+}
+
+.col1{
+text-align: center;
+width: 4.7%;
+}
+
+#bar2{
+    margin-left: 17%;
+}
+
+#bar{
+    height: 30px;
+}
+.resultSum{
+    background: #e1e1e1;
+}
+.progress{
+    border: 2px solid black;
+}
+.canvas{
+    background: #e1e1e1;
+}
+
+.pCyrcle {
+    text-align:center;
+    display: flex;
+
+
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid #f1f1f1;
+    z-index: 10;
+}
+.line {
+    width: 9%;
+    border-top: 3px solid grey;
+    z-index: 0;
+}
+
 #circ_Image{
+    height: 300px;
     transition: transform .2s;
 }
 
@@ -6,13 +133,19 @@
     transform: scale(1.2);
 }
 
+#auto_Text{
+    width: 65%;
+}
+
 #auto_Image{
+    width: 35%;
+    height: 360px;
     transition: transform .2s;
     margin-left: 2%;
 }
 
 #auto_Image:hover{
-    transform: scale(1.4);
+    transform: scale(1.24);
     z-index: 2;
     margin-left: 6%;
 }
@@ -86,10 +219,11 @@
   overflow: hidden;
   background-color: #f1f1f1;
 }
-
+/*
 body{
     background: #a9a9a9;
 }
+*/
 #submit{
 	float: left;
 	margin-left: 30%

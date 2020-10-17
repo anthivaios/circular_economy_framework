@@ -20,7 +20,7 @@ def form():
 
         return render_template("results.html", value=data)
     else:
-        return render_template("form.html")
+        return render_template("form2.html")
 
 
 @app.route("/info")

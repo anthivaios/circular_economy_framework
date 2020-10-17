@@ -12,15 +12,14 @@
 
 
         <div id="resultSum" class="col-4">
-            <div class="col border border-3 border-dark mt-5">
+            <div class="col border border-3 border-dark mt-5 resultSum">
                 <p><u><h1 class="display-2">Your Score</h1></u></p>
                 <div class="mt-5">
 
                     <h1 class="display-1">{{ value.getTotalScore() }} / 20</h1></p>
                 </div>
                 <div>
-                    <h1 class="display-3">{{ 100 -value.getTotalScore100() }} to Go!</h1>
-                    <div id="bar" class="progress mt-5 mb-5">
+                    <div id="bar" class="progress mt-5 mb-5 mr-2">
                         <div class="progress-bar" role="progressbar" aria-valuenow="{{ value.getTotalScore100() }}"
                              aria-valuemin="0" aria-valuemax="100" style="width: {{ value.totalScore100 }}%">
                             {{ value.getTotalScore100() }} %
@@ -28,7 +27,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col border border-3 border-dark mt-5">
+            <div class="col border border-3 border-dark mt-5 canvas">
                 <canvas id="myChart" width="400" height="400"></canvas>
             </div>
         </div>
@@ -58,13 +57,13 @@
                         <td>
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                     data-target="#exampleModal"
-                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getFirst().getRec1() }}', '{{ value.getFirst().getRec2() }}', '{{ value.getFirst().getRec3() }}', 'Recycled')">
+                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getFirst().getRec1() }}', '{{ value.getFirst().getRec2() }}', '{{ value.getFirst().getRec3() }}', 'Recycled', 'Percentage', 'Ratio of Recycled Materials In Average Vehicle Production')">
                                 Plot
                             </button>
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">Time of Disassembly in Average Vehicle(hours)</th>
+                        <th scope="row">Disassembly Time of Average Vehicle(hours)</th>
                         <td>{{ value.getFirst().getDisassemblyPer1() }}</td>
                         <td>{{ value.getFirst().getDisassemblyPer2() }}</td>
                         <td>{{ value.getFirst().getDisassembly3() }}</td>
@@ -72,7 +71,7 @@
                         <td>
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                     data-target="#exampleModal"
-                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getFirst().getDisassembly1() }}', '{{ value.getFirst().getDisassembly2() }}', '{{ value.getFirst().getDisassembly3() }}', 'Disassembly')">
+                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getFirst().getDisassembly1() }}', '{{ value.getFirst().getDisassembly2() }}', '{{ value.getFirst().getDisassembly3() }}', 'Disassembly', 'Hours', 'Disassembly Time of Average Vehicle')">
                                 Plot
                             </button>
                         </td>
@@ -86,7 +85,7 @@
                         <td>
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                     data-target="#exampleModal"
-                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getFirst().getEnergy1() }}', '{{ value.getFirst().getEnergy2() }}', '{{ value.getFirst().getEnergy3() }}', 'Energy')">
+                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getFirst().getEnergy1() }}', '{{ value.getFirst().getEnergy2() }}', '{{ value.getFirst().getEnergy3() }}', 'Energy', 'kWh', 'Energy Consumption of an Average Vehicle')">
                                 Plot
                             </button>
                         </td>
@@ -100,13 +99,13 @@
                         <td>
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                     data-target="#exampleModal"
-                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3 }}', '{{ value.getFirst().getCo21() }}', '{{ value.getFirst().getCo22() }}', '{{ value.getFirst().getCo23() }}', 'Co^2')">
+                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3 }}', '{{ value.getFirst().getCo21() }}', '{{ value.getFirst().getCo22() }}', '{{ value.getFirst().getCo23() }}', 'Co^2', 'Tonnes', 'Co^2 Emissions for the Production of an Average Vehicle')">
                                 Plot
                             </button>
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">Material loss for the Production of an Average Vehicle(tonnes)</th>
+                        <th scope="row">Material loss for the Production of an Average Vehicle(kg)</th>
                         <td>{{ value.getFirst().getLossPer1() }}</td>
                         <td>{{ value.getFirst().getLossPer2() }}</td>
                         <td>{{ value.getFirst().getLoss3() }}</td>
@@ -114,7 +113,7 @@
                         <td>
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                     data-target="#exampleModal"
-                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getFirst().getLoss1() }}', '{{ value.getFirst().getLoss2() }}', '{{ value.getFirst().getLoss3() }}' , 'Material Loss')">
+                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getFirst().getLoss1() }}', '{{ value.getFirst().getLoss2() }}', '{{ value.getFirst().getLoss3() }}' , 'Material Loss', 'Kg', 'Material loss for the Production of an Average Vehicle')">
                                 Plot
                             </button>
                         </td>
@@ -128,7 +127,7 @@
                         <td>
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                     data-target="#exampleModal"
-                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getFirst().getWater1() }}', '{{ value.getFirst().getWater2() }}', '{{ value.getFirst().getWater3() }}', 'Water')">
+                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getFirst().getWater1() }}', '{{ value.getFirst().getWater2() }}', '{{ value.getFirst().getWater3() }}', 'Water', 'Liter', 'Water used for the Production of an Average Vehicle')">
                                 Plot
                             </button>
                         </td>
@@ -142,7 +141,7 @@
                         <td>
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                     data-target="#exampleModal"
-                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getFirst().getParts1() }}', '{{ value.getFirst().getParts2() }}', '{{ value.getFirst().getParts3() }}' , ' Vehicle Parts')">
+                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getFirst().getParts1() }}', '{{ value.getFirst().getParts2() }}', '{{ value.getFirst().getParts3() }}' , ' Vehicle Parts', 'Parts', 'Number of Vehicle Parts with Remote Information Technologies')">
                                 Plot
                             </button>
                         </td>
@@ -156,7 +155,7 @@
                         <td>
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                     data-target="#exampleModal"
-                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getFirst().getCheck1() }}', '{{ value.getFirst().getCheck2() }}', '{{ value.getFirst().getCheck3() }}', 'Vehicle Checks')">
+                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getFirst().getCheck1() }}', '{{ value.getFirst().getCheck2() }}', '{{ value.getFirst().getCheck3() }}', 'Vehicle Checks', 'Percentage', 'Ratio of Vehicles Checked')">
                                 Plot
                             </button>
                         </td>
@@ -179,7 +178,7 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <th scope="row">Mass Ratio of EOL Vehicles which will be reused/recycled(%)</th>
+                        <th scope="row">Mass Ratio of EOL Vehicles which were reused/recycled(%)</th>
                         <td>{{ value.getSecond().getReusedPer1() }} / {{ value.getSecond().getRecyclingPer1() }}</td>
                         <td>{{ value.getSecond().getReusedPer2() }} / {{ value.getSecond().getRecyclingPer2() }}</td>
                         <td>{{ value.getSecond().getReused3() }} / {{ value.getSecond().getRecycling3() }}</td>
@@ -187,7 +186,7 @@
                         <td>
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                     data-target="#exampleModal"
-                                    onclick="makePlot2('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getSecond().getReused1() }}', '{{ value.getSecond().getReused2() }}', '{{ value.getSecond().getReused3() }}' , '{{ value.getSecond().getRecycling1() }}', '{{ value.getSecond().getRecycling2() }}', '{{ value.getSecond().getRecycling3() }}')">
+                                    onclick="makePlot2('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getSecond().getReused1() }}', '{{ value.getSecond().getReused2() }}', '{{ value.getSecond().getReused3() }}' , '{{ value.getSecond().getRecycling1() }}', '{{ value.getSecond().getRecycling2() }}', '{{ value.getSecond().getRecycling3() }}', 'Percentage', 'Mass Ratio of EOL Vehicles which were reused/recycled')">
                                 Plot
                             </button>
                         </td>
@@ -201,7 +200,7 @@
                         <td>
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                     data-target="#exampleModal"
-                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getSecond().getRemanufactured1() }}', '{{ value.getSecond().getRemanufactured2() }}', '{{ value.getSecond().getRemanufactured3() }}', 'Remanufactured')">
+                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getSecond().getRemanufactured1() }}', '{{ value.getSecond().getRemanufactured2() }}', '{{ value.getSecond().getRemanufactured3() }}', 'Remanufactured', 'Percentage', 'Ratio of EOL Vehicle Parts which were remanufactured')">
                                 Plot
                             </button>
                         </td>
@@ -215,7 +214,7 @@
                         <td>
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                     data-target="#exampleModal"
-                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getSecond().getEol1() }}', '{{ value.getSecond().getEol2() }}', '{{ value.getSecond().getEol3() }}', 'Recovery')">
+                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getSecond().getEol1() }}', '{{ value.getSecond().getEol2() }}', '{{ value.getSecond().getEol3() }}', 'Recovery', 'Percentage', 'Ratio of EOL Vehicles retrieved Properly')">
                                 Plot
                             </button>
                         </td>
@@ -246,13 +245,13 @@
                         <td>
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                     data-target="#exampleModal"
-                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getThird().getSec1() }}', '{{ value.getThird().getSec2() }}', '{{ value.getThird().getSec3() }}', 'Non-Virgin Material' )">
+                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getThird().getSec1() }}', '{{ value.getThird().getSec2() }}', '{{ value.getThird().getSec3() }}', 'Non-Virgin Material', 'Percentage', 'Ratio of non-Virgin Materials on Average Car' )">
                                 Plot
                             </button>
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">Ratio of EOL vehicles which feeds further Industries(%)</th>
+                        <th scope="row">Ratio of EOL vehicles which fed further Industries(%)</th>
                         <td>{{ value.getThird().getFeedPer1() }}</td>
                         <td>{{ value.getThird().getFeedPer2() }}</td>
                         <td>{{ value.getThird().getFeed3() }}</td>
@@ -260,7 +259,7 @@
                         <td>
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                     data-target="#exampleModal"
-                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getThird().getFeed1() }}', '{{ value.getThird().getFeed2() }}', '{{ value.getThird().getFeed3() }}', 'Industrial Material Feed')">
+                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getThird().getFeed1() }}', '{{ value.getThird().getFeed2() }}', '{{ value.getThird().getFeed3() }}', 'Industrial Material Feed', 'Percentage', 'Ratio of EOL vehicles which fed further Industries')">
                                 Plot
                             </button>
                         </td>
@@ -291,7 +290,7 @@
                         <td>
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                     data-target="#exampleModal"
-                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getForth().getJobs1() }}', '{{ value.getForth().getJobs2() }}', '{{ value.getForth().getJobs3() }}', 'Jobs')">
+                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getForth().getJobs1() }}', '{{ value.getForth().getJobs2() }}', '{{ value.getForth().getJobs3() }}', 'Jobs', 'Jobs', 'Number of Jobs on with any Circular Activity')">
                                 Plot
                             </button>
                         </td>
@@ -305,13 +304,13 @@
                         <td>
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                     data-target="#exampleModal"
-                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getForth().getProject1() }}', '{{ value.getForth().getProject2() }}', '{{ value.getForth().getProject3() }}', 'Projects')">
+                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getForth().getProject1() }}', '{{ value.getForth().getProject2() }}', '{{ value.getForth().getProject3() }}', 'Projects', 'Projects', 'Number of Circular Projects')">
                                 Plot
                             </button>
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">Capital spent on R&D for Circular Ideas($)</th>
+                        <th scope="row">Ratio of Capital funds spent on R&D for Circular Ideas($)</th>
                         <td>{{ value.getForth().getCapitalPer1() }}</td>
                         <td>{{ value.getForth().getCapitalPer2() }}</td>
                         <td>{{ value.getForth().getCapital3() }}</td>
@@ -319,7 +318,7 @@
                         <td>
                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                     data-target="#exampleModal"
-                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getForth().getCapital1() }}', '{{ value.getForth().getCapital2() }}', '{{ value.getForth().getCapital3() }}', 'Capital')">
+                                    onclick="makePlot('{{ value.getYear1() }}','{{ value.getYear2() }}', '{{ value.getYear3() }}', '{{ value.getForth().getCapital1() }}', '{{ value.getForth().getCapital2() }}', '{{ value.getForth().getCapital3() }}', 'Capital', 'Percentage', 'Ratio of Capital funds spent on R&D for Circular Ideas')">
                                 Plot
                             </button>
                         </td>
@@ -400,7 +399,7 @@
 
     var myDoughnutChart = new Chart(ctx, config);
 
-    function makePlot(y1,y2,y3,v1,v2,v3, name){
+    function makePlot(y1,y2,y3,v1,v2,v3, name ,value, tit){
             console.log(v3)
             console.log(v1)
             console.log(v2)
@@ -427,14 +426,35 @@
             options: {
                 title: {
                     display: true,
-                    text: 'Plot'
+                    text: tit,
                 },
-
+                scales: {
+        xAxes: [ {
+          display: true,
+          scaleLabel: {
+            display: true,
+            labelString: 'Year'
+          },
+          ticks: {
+            major: {
+              fontStyle: 'bold',
+              fontColor: '#FF0000'
+            }
+          }
+        } ],
+        yAxes: [ {
+          display: true,
+          scaleLabel: {
+            display: true,
+            labelString: value,
+          }
+        } ]
+      }
             }
             };
         var myLineChart = new Chart(ctx1, config1);
      }
-     function makePlot2(y1,y2,y3,v1,v2,v3,v4,v5,v6){
+     function makePlot2(y1,y2,y3,v1,v2,v3,v4,v5,v6, value, tit){
             console.log(v3)
             console.log(v1)
             console.log(v2)
@@ -470,13 +490,37 @@
             options: {
                 title: {
                     display: true,
-                    text: 'Plot'
+                    text: tit
                 },
+                scales: {
+        xAxes: [ {
 
+          display: true,
+          scaleLabel: {
+            display: true,
+            labelString: 'Year'
+          },
+          ticks: {
+            major: {
+              fontStyle: 'bold',
+              fontColor: '#FF0000'
+            }
+          }
+        } ],
+        yAxes: [ {
+          display: true,
+          scaleLabel: {
+            display: true,
+            labelString: value,
+          }
+        } ]
+      }
             }
             };
         var myLineChart = new Chart(ctx1, config1);
      }
+
+
 
 
 

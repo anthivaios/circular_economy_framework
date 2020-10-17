@@ -1,0 +1,544 @@
+{% extends "base.html" %}
+{% block title %}Form page{% endblock%}
+{% block content %}
+<form action="" method="post" class="w-75 col mt-4" id="mainWindow" style="margin-left: 12.5%;">
+    <!-- MultiStep Form -->
+
+    <div class="row pt-5" id="bar2">
+        <div class="col1">
+            <div class="pCyrcle"><p class="t2">1</p></div>
+            <p class="t1">Industry Details</p>
+        </div>
+        <div class="line"></div>
+        <div class="col1">
+            <div class="pCyrcle"><p class="t2">2</p></div>
+            <p class="t1">Years</p>
+        </div>
+        <div class="line"></div>
+        <div class="col1">
+            <div class="pCyrcle"><p class="t2">3</p></div>
+            <p class="t1">Category 1</p>
+        </div>
+        <div class="line"></div>
+        <div class="col1">
+            <div class="pCyrcle"><p class="t2">4</p></div>
+            <p class="t1">Category 2</p>
+        </div>
+        <div class="line"></div>
+        <div class="col1">
+            <div class="pCyrcle"><p class="t2">5</p></div>
+            <p class="t1">Category 3</p>
+        </div>
+        <div class="line"></div>
+        <div class="col1">
+            <div class="pCyrcle"><p class="t2">6</p></div>
+            <p class="t1">Category 4</p>
+        </div>
+
+    </div>
+    <div id="regForm" class="container row">
+        <div class="col">
+            <h1 id="catName">Industry Information:</h1>
+
+            <!-- One "tab" for each step in the form: -->
+            <div class="tab">Brand Name:
+                <p><input placeholder="Enter Brand..." oninput="this.className = ''"></p>
+                Email:
+                <p><input placeholder="Enter email..." oninput="this.className = ''"></p>
+                Your Name:
+                <p><input placeholder="Enter name..." oninput="this.className = ''"></p>
+            </div>
+
+            <div class="tab mt-5">
+                <div class="row">
+                    <p class="mr-2 mt-4 inp3"><input type="text" name="year1" placeholder="Please Select Year"
+                                                     class="datepicker"
+                                                     oninput="this.className = ''"></p>
+                    <p class="mr-2 mt-4 inp3"><input type="text" name="year2" placeholder="Please Select Year"
+                                                     class="datepicker"
+                                                     oninput="this.className = ''"></p>
+                    <p class="mr-2 mt-4 inp3"><input type="text" name="year3" placeholder="Please Select Year"
+                                                     class="datepicker"
+                                                     oninput="this.className = ''"></p>
+                </div>
+            </div>
+
+            <div class="tab">
+                <div class="row ">
+                    <p class="mr-2">Ratio of Recycled Materials in Average Vehicle Production(%).</p>
+
+                    <div title="Materials with recycling potential have unique
+                            &#013;role on the road for a more Circular automotive industry!
+                            &#013;Range: 0 - 100
+                            &#013;Score: (>= 40) ->2 | (>=30) -> 1 | 0"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 1..." name="rec1"
+                                                     min="0"
+                                                     max="100" class="mr-1 rec" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 2..." name="rec2"
+                                                     min="0"
+                                                     max="100" class="mr-1 rec" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 3..." name="rec3"
+                                                     min="0"
+                                                     max="100" class="mr-1 rec" oninput="this.className = ''"
+                                                     required></p>
+                </div>
+                <div class="row">
+                    <p class="mr-2">Time of Disassembly on an Average Vehicle(hours).</p>
+
+                    <div title="Small Disassemby time is essential for the circular
+                            &#013;operations (Recycle, Remanufacture, etc)!!
+                            &#013;Range: 0 - 50
+                            &#013;Score: (<= 7) ->2 | (<=16) -> 1 | 0"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 1..."
+                                                     name="disassembly1"
+                                                     min="0"
+                                                     max="50" class="mr-1 disassembly" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 2..."
+                                                     name="disassembly2"
+                                                     min="0"
+                                                     max="50" class="mr-1 disassembly" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 3..."
+                                                     name="disassembly3"
+                                                     min="0"
+                                                     max="50" class="mr-1 disassembly" oninput="this.className = ''"
+                                                     required></p>
+                </div>
+                <div class="row">
+                    <p class="mr-2">Energy Consumption for the Production of an Average Vehicle(MWh).</p>
+
+                    <div title="One of the main goals towards Circularity is the
+                            &#013;reduction of the Energy used in Production!
+                            &#013;Range: 0 - 6
+                            &#013;Score: (<= 2) ->2 | (<=2.4) -> 1 | 0"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 1..." name="energy1"
+                                                     min="0"
+                                                     max="6" class="mr-1 energy" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 2..." name="energy2"
+                                                     min="0"
+                                                     max="6" class="mr-1 energy" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 3..." name="energy3"
+                                                     min="0"
+                                                     max="6" class="mr-1 energy" oninput="this.className = ''"
+                                                     required></p>
+                </div>
+            </div>
+
+            <div class="tab">
+                <div class="row">
+                    <p class="mr-2">Co2 emissions for the Production of an Average Vehicle(tonnes).</p>
+
+                    <div title="Co^2 emissions have great economic and environmental
+                            &#013;impacts. Their reduction is one more step towards Circularity!
+                            &#013;Range: 0 - 4
+                            &#013;Score: (<= 0.5) ->2 | (<= 0.7) -> 1 | 0"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 1..." name="co2-1"
+                                                     min="0"
+                                                     max="4" class="mr-1 co2" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 2..." name="co2-2"
+                                                     min="0"
+                                                     max="4" class="mr-1 co2" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 3..." name="co2-3"
+                                                     min="0"
+                                                     max="4" class="mr-1 co2" oninput="this.className = ''"
+                                                     required></p>
+                </div>
+                <div class="row">
+                    <p class="mr-2">Material loss in the Production of an Average Vehicle(kg).</p>
+
+                    <div title="Material Loss in the Production proccess is a fine
+                            &#013;Indicator of Circularity. These materials are hard to
+                             &#013;be reused, so their quantity rate must be decreased!
+                            &#013;Range: 0 - 10"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 1..." name="loss1"
+                                                     min="0"
+                                                     max="10" class="mr-1 loss" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 2..." name="loss2"
+                                                     min="0"
+                                                     max="10" class="mr-1 loss" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 3..." name="loss3"
+                                                     min="0"
+                                                     max="10" class="mr-1 loss" oninput="this.className = ''"
+                                                     required></p>
+                </div>
+                <div class="row">
+                    <p class="mr-2">Water used in the Production of an Average Vehicle(liter).</p>
+
+                    <div title="The Production of a vehicle required a significant
+                            &#013;amount of Water, the reduction of which is a good parameter
+                             &#013;of Circularity's growth!
+                            &#013;Range: 0 - 200
+                            &#013;Score: (<= 130) ->2 | (<= 145) -> 1 | 0"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 1..." name="water1"
+                                                     min="0"
+                                                     max="200" class="mr-1 water" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 2..." name="water2"
+                                                     min="0"
+                                                     max="200" class="mr-1 water" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 3..." name="water3"
+                                                     min="0"
+                                                     max="200" class="mr-1 water" oninput="this.className = ''"
+                                                     required></p>
+                </div>
+            </div>
+            <div class="tab mt-4">
+                <div class="row">
+                    <p class="mr-2">Number of parts with Remote Information Technologies on Average
+                        Vehicle(parts).</p>
+
+                    <div title="IOT Technologies are game-changing in the way that
+                            &#013;we can observe what goes wrong in a Vehicle so we can
+                             &#013;make them better and increase their lifetime!
+                            &#013;Range: 0 - 500"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="1" placeholder="Value 1..." name="parts1"
+                                                     min="0"
+                                                     max="500" class="mr-1 parts" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="1" placeholder="Value 2..." name="parts2"
+                                                     min="0"
+                                                     max="500" class="mr-1 parts" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="1" placeholder="Value 3..." name="parts3"
+                                                     min="0"
+                                                     max="500" class="mr-1 parts" oninput="this.className = ''"
+                                                     required></p>
+                </div>
+                <div class="row mt-4">
+                    <p class="mr-2">Ratio of Vehicle Checks(%).</p>
+
+                    <div title="The usual check of vehicles is really important,
+                            &#013;because they achieve minor fixes and prevent serious
+                             &#013;damage, increasing lifetime of vehicle!
+                            &#013;Range: 0 - 100
+                            &#013;(>= 90) ->2 | (>= 60) -> 1 | 0"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 1..." name="check1"
+                                                     min="0"
+                                                     max="100" class="mr-1 check" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 2..." name="check2"
+                                                     min="0"
+                                                     max="100" class="mr-1 check" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 3..." name="check3"
+                                                     min="0"
+                                                     max="100" class="mr-1 check" oninput="this.className = ''"
+                                                     required></p>
+                </div>
+
+            </div>
+            <div class="tab mt-4">
+                <div class="row">
+                    <p class="mr-2">Mass Ratio of EOL vehicle waste which will be reused(%).</p>
+
+                    <div title="Some parts of the vehicle at the end of its life
+                                        &#013;are in fine condition and can be reused with or
+                                         &#013;without modifications feeding a material loop!
+                                        &#013;Range: 0 - 100
+                                        &#013;Score: Reused + Recycling: (>= 85) ->2 | (>= 70) -> 1 | 0"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 1..." name="reused1"
+                                                     min="0"
+                                                     max="100" class="mr-1 reused" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 2..." name="reused2"
+                                                     min="0"
+                                                     max="100" class="mr-1 reused" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 3..." name="reused3"
+                                                     min="0"
+                                                     max="100" class="mr-1 reused" oninput="this.className = ''"
+                                                     required></p>
+                </div>
+                <div class="row mt-4">
+                    <p class="mr-2">Ratio of EOL Vehicles which will be remanufactured(%).</p>
+
+                    <div title="Some vehicles at the end of their life are in good
+                                    &#013;condition and can be remanufactured so that some of their
+                                     &#013;parts can be used again!
+                                    &#013;Range: 0 - 100
+                                    &#013;Score: (>= 15) ->2 | (>= 9) -> 1 | 0"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 1..."
+                                                     name="remanufactured1"
+                                                     min="0"
+                                                     max="100" class="mr-1 remanufactured" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 2..."
+                                                     name="remanufactured2"
+                                                     min="0"
+                                                     max="100" class="mr-1 remanufactured" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 3..."
+                                                     name="remanufactured3"
+                                                     min="0"
+                                                     max="100" class="mr-1 remanufactured" oninput="this.className = ''"
+                                                     required></p>
+                </div>
+
+            </div>
+            <div class="tab mt-4">
+                <div class="row">
+                    <p class="mr-2">Mass Ratio of EOL Vehicles which will be recycled(%).</p>
+
+                    <div title="End of life vehicles are often a huge source of recycled
+                                    &#013;materials, which contributes in the production loop!
+                                    &#013;Range: 0 - 100
+                                    &#013;Score: Reused + Recycling: (>= 85) ->2 | (>= 70) -> 1 | 0"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 1..."
+                                                     name="recycling1"
+                                                     min="0"
+                                                     max="100" class="mr-1 recycling" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 2..."
+                                                     name="recycling2"
+                                                     min="0"
+                                                     max="100" class="mr-1 recycling" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 3..."
+                                                     name="recycling3"
+                                                     min="0"
+                                                     max="100" class="mr-1 recycling" oninput="this.className = ''"
+                                                     required></p>
+                </div>
+                <div class="row mt-4">
+                    <p class="mr-2">Ratio of EOL Vehicles retrieved properly(%).</p>
+
+                    <div title="Retrieving properly vehicles at the end of their live is
+                                    &#013;essential for the circular processes, as material loop inputs!
+                                    &#013;Range: 0 - 100
+                                    &#013;Score: (>= 90) ->2 | (>= 75) -> 1 | 0"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 1..." name="eol1"
+                                                     min="0"
+                                                     max="100" class="mr-1 eol" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 2..." name="eol2"
+                                                     min="0"
+                                                     max="100" class="mr-1 eol" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 3..." name="eol3"
+                                                     min="0"
+                                                     max="100" class="mr-1 eol" oninput="this.className = ''"
+                                                     required></p>
+                </div>
+
+            </div>
+            <div class="tab mt-4">
+                <div class="row">
+                    <p class="mr-2">Ratio of non Virgin Material of an Average Vehicle(%)</p>
+
+                    <div title="The percentage of the non virgin material in a vehicle is
+                                    &#013;a fine indicator which can monitor the increase of the secondary
+                                     &#013;material demand!
+                                    &#013;Range: 0 - 100
+                                    &#013;Score: (>= 40) ->2 | (>= 30) -> 1 | 0"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 1..." name="sec1"
+                                                     min="0"
+                                                     max="100" class="mr-1 sec" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 2..." name="sec2"
+                                                     min="0"
+                                                     max="100" class="mr-1 sec" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 3..." name="sec3"
+                                                     min="0"
+                                                     max="100" class="mr-1 sec" oninput="this.className = ''"
+                                                     required></p>
+                </div>
+                <div class="row mt-4">
+                    <p class="mr-2">Mass Ratio of EOL Vehicles that feeds further Industries(%).</p>
+
+                    <div title="The material loops are more efficient out of the borders
+                                    &#013;of one Industry. Taking account of the secondary material
+                                     &#013;supply to other industries gives us one more indicator towards circularity!
+                                    &#013;Range: 0 - 100"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 1..." name="feed1"
+                                                     min="0"
+                                                     max="100" class="mr-1 feed" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 2..." name="feed2"
+                                                     min="0"
+                                                     max="100" class="mr-1 feed" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 3..." name="feed3"
+                                                     min="0"
+                                                     max="100" class="mr-1 feed" oninput="this.className = ''"
+                                                     required></p>
+                </div>
+
+            </div>
+            <div class="tab">
+                <div class="row">
+                    <p class="mr-2">Number of Employees working on Jobs which include any Circular
+                        Process(employees).</p>
+
+                    <div title="It is important to track the employment rate in Circular
+                                    &#013;operations because this reflects the interest of an industry in Circular Economy!
+                                    &#013;Range: 0 - 5000"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="1" placeholder="Value 1..." name="jobs1"
+                                                     min="0"
+                                                     max="5000" class="mr-1 jobs" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="1" placeholder="Value 2..." name="jobs2"
+                                                     min="0"
+                                                     max="5000" class="mr-1 jobs" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="1" placeholder="Value 3..." name="jobs3"
+                                                     min="0"
+                                                     max="5000" class="mr-1 jobs" oninput="this.className = ''"
+                                                     required></p>
+                </div>
+                <div class="row">
+                    <p class="mr-2">Number of Circular Projects(projects).</p>
+
+                    <div title="New Circular ideas are born every day, that drives industries
+                                    &#013;in creating new teams working exclusively in Circular Projects!
+                                    &#013;Range: 0 - 100"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="1" placeholder="Value 1..." name="project1"
+                                                     min="0"
+                                                     max="50" class="mr-1 project" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="1" placeholder="Value 2..." name="project2"
+                                                     min="0"
+                                                     max="50" class="mr-1 project" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="1" placeholder="Value 3..." name="project3"
+                                                     min="0"
+                                                     max="50" class="mr-1 project" oninput="this.className = ''"
+                                                     required></p>
+                </div>
+                <div class="row">
+                    <p class="mr-2">Ratio of Capital founds spent on R&D for Circular Ideas(%).</p>
+
+                    <div title="One more metric of how much an industry is interested about the
+                                    &#013;circular way is the funds provided for Research and Development
+                                     &#013;on this field!
+                                     &#013;Range: 0 - 100"
+                         class="icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 1..." name="capital1"
+                                                     min="0"
+                                                     max="100" class="mr-1 capital" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 2..." name="capital2"
+                                                     min="0"
+                                                     max="100" class="mr-1 capital" oninput="this.className = ''"
+                                                     required></p>
+                    <p class="mr-1 mt-1 inp3"><input type="number" step="0.01" placeholder="Value 3..." name="capital3"
+                                                     min="0"
+                                                     max="100" class="mr-1 capital" oninput="this.className = ''"
+                                                     required></p>
+                </div>
+
+            </div>
+
+            <!-- Circles which indicates the steps of the form: -->
+            <div id="dots" class ="dots" style="text-align:center;margin-top:40px;">
+                <span class="step"></span>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="row mt-2">
+        <button type="button" class="btn btn-outline-dark btn-lg" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+        <div id="post" class="ml-auto">
+            <button type="button" class="btn btn-primary btn-lg float-right ml-auto" id="nextBtn" onclick="nextPrev(1)">
+                Next
+            </button>
+        </div>
+    </div>
+</form>
+{% endblock %}
